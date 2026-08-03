@@ -1,29 +1,55 @@
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { Pricing } from './components/Pricing';
-import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
+import { MouseTrail } from './components/MouseTrail';
+import { AIVoiceButton } from './components/AIVoiceButton';
+import { Home } from './pages/Home';
+import { ServicesPage } from './pages/Services';
+import { AboutPage } from './pages/About';
+import { PricingPage } from './pages/Pricing';
+import { ContactPage } from './pages/Contact';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-brand-500/30 selection:text-brand-200">
-      {/* Background glow effects */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] rounded-full bg-brand-600/15 blur-[150px] mix-blend-screen"></div>
-        <div className="absolute top-[40%] -right-[20%] w-[60vw] h-[60vw] rounded-full bg-brand-900/20 blur-[150px] mix-blend-screen"></div>
-      </div>
-
-      <Navbar />
+    <div className="min-h-screen bg-[var(--color-bg-light)] text-black selection:bg-brand-500/30 selection:text-brand-900 flex flex-col relative overflow-x-hidden">
+      <ScrollToTop />
+      <MouseTrail />
+      <AIVoiceButton />
       
-      <main>
-        <Hero />
-        <Services />
-        <Pricing />
-        <CTA />
+      {/* Deep, dark background with subtle atmospheric blue on left */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.08),_transparent_50%)]"></div>
+      
+      {/* Soft, luxury sky light from the right edge */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[radial-gradient(ellipse_at_right_center,_rgba(14,165,233,0.12),_transparent_60%)]"></div>
+
+      <div className="relative z-50">
+        <Navbar />
+      </div>
+      
+      <main className="relative z-10 flex-grow">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/pricing" element={<PricingPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
       </main>
 
-      <Footer />
+      <div className="relative z-20 mt-auto">
+        <Footer />
+      </div>
     </div>
   );
 }

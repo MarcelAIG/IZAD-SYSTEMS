@@ -1,23 +1,36 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function CTA() {
   return (
-    <section className="py-32 relative z-10">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 relative z-10 overflow-hidden">
+      
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="text-center"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center bg-black/20 backdrop-blur-xl border border-white/10 p-16 md:p-24 rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] relative overflow-hidden"
         >
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-10">
-            Start Scaling.
-          </h2>
-          <button className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-400 hover:to-brand-500 text-white px-12 py-6 rounded-full text-xl font-bold transition-all flex items-center justify-center mx-auto group shadow-[0_0_50px_rgba(214,40,0,0.5)] border border-brand-400/50">
-            Book Call
-            <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </button>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
+          
+          <div className="relative z-10">
+            <h2 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white mb-8 font-display">
+              Ready to stop <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">
+                wasting your time?
+              </span>
+            </h2>
+            <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+              If you want to keep doing everything manually, that's on you. If you want to scale up without burning out, let's talk.
+            </p>
+            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-800 hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(14,165,233,0.3)] text-white px-14 py-6 rounded-full text-xl font-bold transition-all duration-500 flex items-center justify-center mx-auto group shadow-lg shadow-brand-500/30">
+              Let's Talk Money
+              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </div>
         </motion.div>
       </div>
     </section>

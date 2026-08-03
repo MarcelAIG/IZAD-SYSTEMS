@@ -1,117 +1,93 @@
 import { motion } from 'motion/react';
-import { Check } from 'lucide-react';
+import { Check, Star } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const crmTiers = [
   {
-    name: "Starter",
+    name: "The Basics",
     price: "297",
     features: [
-      "Calendar Integration",
-      "FAQ Automation"
+      "Full Calendar Setup",
+      "Basic Automated Texting"
     ]
   },
   {
-    name: "Growth",
+    name: "The Growth System",
     price: "497",
     popular: true,
     features: [
-      "Customized CRM",
-      "Calendar Integration"
+      "Custom AI CRM Built For You",
+      "Calendar Integration",
+      "Priority VIP Support"
     ]
   },
   {
-    name: "Global",
+    name: "The Global Empire",
     price: "697",
     features: [
-      "Fully Customized Plan",
-      "Additional Language"
+      "Fully Custom Everything",
+      "Multiple Languages",
+      "Dedicated Account Manager"
     ]
   }
 ];
 
 export function Pricing() {
   return (
-    <section id="pricing" className="py-32 relative z-10 border-t border-white/[0.05] bg-black/40 backdrop-blur-3xl">
+    <section id="pricing" className="py-32 relative z-10 border-t border-slate-200 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-24">
-          <h2 className="text-3xl font-bold text-white mb-12 text-center">Booking & CRM</h2>
+        
+        <div className="text-center mb-20 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter text-slate-900 mb-6 font-display">
+            Here is <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">What It Costs</span>
+          </h2>
+          <p className="text-slate-600 text-xl font-medium">
+            No hidden fees. No bullshit. Just powerful systems that pay for themselves by closing the gaps in your revenue.
+          </p>
+        </div>
+
+        <div className="mb-32">
+          <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center font-display">Monthly Software & Hosting</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {crmTiers.map((tier, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative bg-white/[0.02] backdrop-blur-3xl border ${tier.popular ? 'border-brand-500/50 shadow-[0_0_50px_rgba(214,40,0,0.15)]' : 'border-white/[0.06] shadow-[inset_0_0_40px_rgba(255,255,255,0.015)]'} p-10 rounded-[2.5rem] flex flex-col`}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-xl shadow-brand-500/10' : 'border-slate-200 shadow-sm'} p-10 lg:p-12 rounded-[2.5rem] flex flex-col group hover:border-brand-300 transition-colors duration-500`}
               >
+                {tier.popular && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-4 py-1.5 rounded-full text-sm font-bold flex items-center shadow-lg shadow-brand-500/30 whitespace-nowrap">
+                    <Star className="w-4 h-4 mr-1.5 fill-current" /> Most Popular
+                  </div>
+                )}
                 <div className="mb-8">
-                  <h4 className="text-2xl font-bold text-white mb-2">{tier.name}</h4>
+                  <h4 className="text-2xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
                 </div>
-                <div className="mb-10">
-                  <span className="text-6xl font-extrabold text-white">${tier.price}</span>
-                  <span className="text-zinc-500 font-bold text-lg">/mo</span>
+                <div className="mb-10 flex items-baseline">
+                  <span className="text-6xl font-extrabold text-slate-900 tracking-tighter">${tier.price}</span>
+                  <span className="text-slate-500 font-bold text-lg ml-2">/mo</span>
                 </div>
                 <ul className="space-y-6 mb-12 flex-1">
                   {tier.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-center">
-                      <div className="w-5 h-5 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 border border-brand-500/30">
-                        <Check className="w-3 h-3 text-brand-400" />
+                      <div className="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center shrink-0 mr-4 border border-brand-100 group-hover:bg-brand-100 transition-colors duration-300">
+                        <Check className="w-3.5 h-3.5 text-brand-500" />
                       </div>
-                      <span className="text-zinc-300 font-bold text-base">{feature}</span>
+                      <span className="text-slate-700 font-bold text-base">{feature}</span>
                     </li>
                   ))}
                 </ul>
+                <Link to="/contact" className={`w-full py-4 rounded-full text-center font-bold text-lg transition-all ${tier.popular ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md' : 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'}`}>
+                  Get Started
+                </Link>
               </motion.div>
             ))}
           </div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-gradient-to-br from-brand-500/20 via-brand-900/20 to-transparent border border-brand-500/30 rounded-[3.2rem] p-1 overflow-hidden relative shadow-[0_0_60px_rgba(214,40,0,0.1)]"
-        >
-          <div className="absolute inset-0 bg-white/[0.01] backdrop-blur-3xl"></div>
-          <div className="relative p-10 md:p-16 lg:flex items-center justify-between z-10 bg-black/70 rounded-[3rem]">
-            <div className="lg:w-2/3 mb-8 lg:mb-0">
-              <h3 className="text-3xl font-extrabold text-white mb-8">Web Infrastructure</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="flex items-center font-bold text-zinc-300 text-lg">
-                  <div className="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 border border-brand-500/30">
-                    <Check className="w-3.5 h-3.5 text-brand-400" />
-                  </div>
-                  Website
-                </div>
-                <div className="flex items-center font-bold text-zinc-300 text-lg">
-                  <div className="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 border border-brand-500/30">
-                    <Check className="w-3.5 h-3.5 text-brand-400" />
-                  </div>
-                  Missed Call Text Back
-                </div>
-                <div className="flex items-center font-bold text-zinc-300 text-lg">
-                  <div className="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 border border-brand-500/30">
-                    <Check className="w-3.5 h-3.5 text-brand-400" />
-                  </div>
-                  Review Protection
-                </div>
-                <div className="flex items-center font-bold text-zinc-300 text-lg">
-                  <div className="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 border border-brand-500/30">
-                    <Check className="w-3.5 h-3.5 text-brand-400" />
-                  </div>
-                  Mobile App
-                </div>
-              </div>
-            </div>
-            <div className="lg:w-1/3 flex flex-col items-start lg:items-end lg:pl-16 lg:border-l border-white/[0.08]">
-              <div className="mb-2">
-                <span className="text-6xl font-extrabold text-white">$297</span>
-                <span className="text-zinc-500 font-bold text-xl">/mo</span>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
