@@ -115,10 +115,10 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
           >
-            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-800 hover:scale-105 hover:shadow-[0_0_40px_rgba(14,165,233,0.4)] text-white px-10 py-5 rounded-full text-lg font-bold transition-all duration-500 flex items-center justify-center shadow-lg shadow-brand-500/30">
-              Book online
+            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-full text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
+              Book a Call
             </Link>
-            <Link to="/services" className="w-full sm:w-auto px-10 py-5 rounded-full text-lg font-bold text-white transition-all flex items-center justify-center border border-white/20 hover:bg-white/5 bg-white/5 shadow-sm">
+            <Link to="/services" className="w-full sm:w-auto px-10 py-5 rounded-full text-lg font-extrabold text-white transition-colors duration-75 flex items-center justify-center border border-white/20 hover:bg-brand-500 hover:border-brand-500 bg-white/5 shadow-sm">
               Our Services
             </Link>
           </motion.div>

@@ -129,7 +129,7 @@ export function About() {
               </div>
 
               <div className="mt-10">
-                <Link to="/contact" className="inline-flex items-center font-bold text-black bg-white hover:bg-slate-200 hover:scale-105 px-8 py-4 rounded-full transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                <Link to="/contact" className="inline-flex items-center font-extrabold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black hover:text-brand-500 px-8 py-4 rounded-full transition-all duration-300 shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
                   Meet the Team
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>

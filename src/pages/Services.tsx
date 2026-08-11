@@ -86,7 +86,7 @@ export function ServicesPage() {
                 ))}
               </ul>
 
-              <Link to="/contact" className="w-full py-3 lg:py-4 rounded-xl font-bold flex items-center justify-center transition-all duration-300 text-sm lg:text-base bg-white/5 hover:bg-white/10 text-white border border-white/10 mt-auto">
+              <Link to="/contact" className="w-full py-3 lg:py-4 rounded-xl font-extrabold flex items-center justify-center transition-all duration-300 text-sm lg:text-base bg-white/5 hover:bg-brand-500 hover:border-brand-500 text-white border border-white/10 mt-auto">
                 I Need This System
               </Link>
             </div>

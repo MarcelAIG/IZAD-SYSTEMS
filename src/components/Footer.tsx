@@ -6,10 +6,9 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <span className="text-3xl font-extrabold tracking-tighter text-white mb-6 flex items-center gap-0 font-display">
-              <img src="/izad-logo.png" alt="Izad Systems Logo" className="h-16 md:h-20 w-auto object-contain" />
-              <div>IZAD <span className="text-brand-500">SYSTEMS</span></div>
-            </span>
+            <Link to="/" className="inline-block mb-6">
+              <img src="/new-logo.png" alt="Izad Systems Logo" className="h-16 md:h-20 w-auto object-contain" />
+            </Link>
             <p className="text-slate-400 text-lg max-w-sm mb-8">
               We build systems that book your calls, answer your texts, and bring in cash while you sleep. No fluff, just results.
             </p>

@@ -109,10 +109,10 @@ export function PricingPage() {
               
               <Link 
                 to="/contact" 
-                className={`w-full py-3 lg:py-4 rounded-xl font-bold flex items-center justify-center transition-all duration-300 text-sm lg:text-base ${
+                className={`w-full py-3 lg:py-4 rounded-xl font-extrabold flex items-center justify-center transition-all duration-300 text-sm lg:text-base ${
                   tier.popular
-                    ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-800 text-white shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40'
-                    : 'bg-white/5 hover:bg-white/10 text-white border border-white/10'
+                    ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 shadow-lg shadow-brand-500/25 border border-transparent hover:border-brand-500'
+                    : 'bg-white/5 hover:bg-brand-500 hover:border-brand-500 hover:text-white text-white border border-white/10'
                 }`}
               >
                 Get a Quote

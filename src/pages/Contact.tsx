@@ -26,7 +26,7 @@ export function ContactPage() {
             <label className="block text-sm font-medium text-zinc-300 mb-2">Message</label>
             <textarea className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-500 transition-colors h-32 resize-none" placeholder="How can we help?"></textarea>
           </div>
-          <button type="button" className="w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-800 hover:scale-[1.02] text-white font-bold py-4 rounded-lg transition-all duration-500 shadow-[0_0_20px_rgba(14,165,233,0.2)] hover:shadow-[0_0_30px_rgba(14,165,233,0.4)]">
+          <button type="button" className="w-full bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 font-extrabold py-4 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.2)] border border-transparent hover:border-brand-500">
             Send Message
           </button>
         </form>
