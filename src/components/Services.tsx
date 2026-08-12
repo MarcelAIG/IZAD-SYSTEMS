@@ -5,18 +5,18 @@ import { MessageSquare, Globe, Plus, Minus, PhoneCall, Calendar } from 'lucide-r
 const systems = [
   {
     icon: <Globe className="w-5 h-5 text-brand-500" />,
-    title: "Website System",
-    description: "A digital storefront built to capture clients and sell your services 24/7."
+    title: "Starter Package",
+    description: "New modern website, reputation & review management system, mobile app access, website chat, and full mobile optimization."
   },
   {
     icon: <MessageSquare className="w-5 h-5 text-brand-500" />,
-    title: "Voice AI Receptionist",
-    description: "Never miss a call again. Your clients can talk directly to your AI on the phone or website."
+    title: "Professional Package",
+    description: "Everything in Starter, plus automated review requests, Missed Call Text Back, dedicated service pages, monthly marketing, and Google Business optimization."
   },
   {
     icon: <Calendar className="w-5 h-5 text-brand-500" />,
-    title: "Automated Booking System",
-    description: "We fill your calendar. AI handles the back-and-forth and books meetings directly into your schedule."
+    title: "Maximum Package",
+    description: "Full automation with AI. Includes AI Voice Agent to answer calls, AI Website Chatbot to turn visitors into leads, and 3 Months of SEO Optimization."
   }
 ];
 

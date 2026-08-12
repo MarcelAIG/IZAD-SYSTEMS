@@ -1,124 +1,177 @@
-import { motion } from 'motion/react';
-import { Check, ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CTA } from '../components/CTA';
 
-const tiers = [
-  {
-    name: "Core System",
-    description: "Essential automation for growing businesses looking to save time.",
-    price: "Custom",
-    features: [
-      "Custom High-Converting Website",
-      "Basic SEO Optimization",
-      "Contact Form Automations",
-      "Mobile Responsive Design",
-      "Standard Support"
-    ]
-  },
-  {
-    name: "Growth System",
-    description: "Our most popular package. Full AI integration for maximum leverage.",
-    price: "Custom",
-    popular: true,
-    features: [
-      "Everything in Core System",
-      "Automated Booking System",
-      "Calendar Integration",
-      "SMS & Email Reminders",
-      "Voice AI Receptionist (Basic)",
-      "Priority Support"
-    ]
-  },
-  {
-    name: "Scale System",
-    description: "Enterprise-grade automation tailored to complex business logic.",
-    price: "Custom",
-    features: [
-      "Everything in Growth System",
-      "Advanced Voice AI Receptionist",
-      "Custom Workflow Automations",
-      "CRM & Payment Integrations",
-      "Dedicated Account Manager",
-      "24/7 Premium Support"
-    ]
-  }
-];
-
 export function PricingPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+  const [annualPhase, setAnnualPhase] = useState(0);
+
+  useEffect(() => {
+    if (isAnnual) {
+      setAnnualPhase(0);
+      const t1 = setTimeout(() => {
+        setAnnualPhase(1); // Strikethrough and scale down
+        const t2 = setTimeout(() => {
+          setAnnualPhase(2); // Slide in discount
+        }, 100);
+        return () => clearTimeout(t2);
+      }, 1000);
+      return () => clearTimeout(t1);
+    } else {
+      setAnnualPhase(0);
+    }
+  }, [isAnnual]);
+
+  const tiers = [
+    {
+      name: "Starter",
+      monthlyPrice: "$197",
+      annualOriginal: "$2,364",
+      annualDiscounted: "$1,773",
+      features: [
+        "Functional Website — 10–20 Pages",
+        "Automated Lead Follow-Up",
+        "5-Star Review Funnel",
+        "On-Site SEO"
+      ],
+      popular: false,
+      buttonStyles: "bg-transparent border-2 border-brand-500 text-white hover:bg-brand-500 hover:text-white transition-none",
+    },
+    {
+      name: "Advanced",
+      monthlyPrice: "$297",
+      annualOriginal: "$3,564",
+      annualDiscounted: "$2,673",
+      features: [
+        "Functional Website — 10–20 Pages",
+        "Automated Lead Follow-Up",
+        "Missed Call Text Back",
+        "5-Star Review Funnel",
+        "One-Click Marketing Campaigns",
+        "On-Site SEO"
+      ],
+      popular: true,
+      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
+    }
+  ];
+
   return (
-    <div className="pt-24 pb-12 min-h-screen flex flex-col">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-16 relative z-10 w-full">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight"
-        >
-          Simple <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">Pricing</span>
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="text-xl text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed"
-        >
-          Stop paying for retainers with no ROI. We build real systems that pay for themselves.
-        </motion.p>
+    <div className="pt-24 pb-12 min-h-screen flex flex-col bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-12 relative z-10 w-full">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-10 font-display">
+          Our pricing
+        </h1>
+        
+        {/* Toggle */}
+        <div className="flex justify-center items-center gap-4 mb-4">
+          <span className={`text-lg font-medium transition-colors ${!isAnnual ? 'text-white' : 'text-slate-500'}`}>Monthly</span>
+          <button 
+            onClick={() => setIsAnnual(!isAnnual)}
+            className="w-16 h-8 bg-[#222] border border-[#333] rounded-full p-1 relative flex items-center shadow-inner"
+          >
+            <motion.div 
+              layout
+              className="w-6 h-6 bg-brand-500 rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]"
+              animate={{ x: isAnnual ? 32 : 0 }}
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            />
+          </button>
+          <span className={`text-lg font-medium transition-colors ${isAnnual ? 'text-white' : 'text-slate-500'}`}>Annually</span>
+        </div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
           {tiers.map((tier, index) => (
-            <motion.div 
+            <div 
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + (index * 0.1) }}
-              className={`relative flex flex-col p-6 lg:p-8 rounded-3xl backdrop-blur-xl border ${
+              className={`relative flex flex-col p-8 lg:p-10 rounded-2xl border transition-none ${
                 tier.popular 
-                  ? 'bg-brand-900/20 border-brand-500/50 shadow-[0_0_40px_rgba(14,165,233,0.15)]' 
-                  : 'bg-black/40 border-white/10 hover:border-white/20'
+                  ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
+                  : 'bg-[#111] border-brand-500/20'
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider shadow-lg shadow-brand-500/30">
-                  Most Popular
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-5 py-1.5 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
+                  MOST POPULAR
                 </div>
               )}
               
               <div className="mb-6">
-                <h3 className="text-xl lg:text-2xl font-bold text-white font-display mb-2">{tier.name}</h3>
-                <p className="text-slate-400 text-sm lg:text-base min-h-[3rem]">{tier.description}</p>
+                <h3 className="text-3xl font-bold text-white mb-2 font-display">{tier.name}</h3>
               </div>
               
-              <div className="mb-8">
-                <div className="flex items-baseline gap-2">
-                  <span className="text-4xl lg:text-5xl font-extrabold text-white tracking-tight">{tier.price}</span>
-                </div>
-                <p className="text-brand-400 text-xs lg:text-sm font-medium mt-2">Tailored to your needs</p>
+              <div className="mb-10 min-h-[140px] flex flex-col justify-center">
+                {!isAnnual ? (
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-6xl font-extrabold text-white tracking-tight">{tier.monthlyPrice}</span>
+                    <span className="text-slate-400 font-bold text-xl">/mo</span>
+                  </div>
+                ) : (
+                  <div className="flex flex-col gap-2">
+                    <motion.div 
+                      animate={{ 
+                        scale: annualPhase > 0 ? 0.65 : 1,
+                        opacity: annualPhase > 0 ? 0.5 : 1,
+                        originX: 0,
+                        originY: 0.5
+                      }}
+                      transition={{ duration: 0.3 }}
+                      className="relative inline-flex items-baseline gap-2 w-fit"
+                    >
+                      <span className="text-6xl font-extrabold tracking-tight text-white">{tier.annualOriginal}</span>
+                      <span className="font-bold text-xl text-slate-400">/yr</span>
+                      
+                      {/* Red Strikethrough Line */}
+                      {annualPhase > 0 && (
+                        <motion.div 
+                          initial={{ scaleX: 0 }}
+                          animate={{ scaleX: 1 }}
+                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          className="absolute left-0 top-1/2 w-full h-2 bg-red-600 origin-left -translate-y-1/2 rounded-full"
+                        />
+                      )}
+                    </motion.div>
+                    
+                    <AnimatePresence>
+                      {annualPhase === 2 && (
+                        <motion.div 
+                          initial={{ opacity: 0, y: -20, height: 0 }}
+                          animate={{ opacity: 1, y: 0, height: 'auto' }}
+                          className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2"
+                        >
+                          <div className="flex items-baseline gap-1">
+                            <span className="text-5xl font-extrabold text-white tracking-tight">{tier.annualDiscounted}</span>
+                            <span className="text-slate-400 font-bold text-lg">/yr</span>
+                          </div>
+                          <span className="animate-pulse bg-red-500/10 text-red-500 font-bold px-3 py-1.5 rounded-md text-sm border border-red-500/30 whitespace-nowrap self-start sm:self-auto">
+                            3 months FREE
+                          </span>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )}
               </div>
               
-              <ul className="space-y-3 mb-8 flex-grow">
+              <ul className="space-y-4 mb-10 flex-grow">
                 {tier.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <Check className={`w-4 h-4 lg:w-5 lg:h-5 mt-0.5 shrink-0 ${tier.popular ? 'text-brand-400' : 'text-slate-500'}`} />
-                    <span className="text-slate-300 text-sm lg:text-base font-medium">{feature}</span>
+                  <li key={i} className="flex items-start gap-4">
+                    <Check className="w-6 h-6 mt-0.5 shrink-0 text-brand-500" />
+                    <span className="text-slate-200 text-lg font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
               
               <Link 
                 to="/contact" 
-                className={`w-full py-3 lg:py-4 rounded-xl font-extrabold flex items-center justify-center transition-all duration-300 text-sm lg:text-base ${
-                  tier.popular
-                    ? 'bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 shadow-lg shadow-brand-500/25 border border-transparent hover:border-brand-500'
-                    : 'bg-white/5 hover:bg-brand-500 hover:border-brand-500 hover:text-white text-white border border-white/10'
-                }`}
+                className={`w-full py-4 rounded-md font-extrabold flex items-center justify-center text-lg uppercase tracking-wide ${tier.buttonStyles}`}
               >
-                Get a Quote
-                <ArrowRight className="w-4 h-4 lg:w-5 lg:h-5 ml-2" />
+                BOOK A CALL
               </Link>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

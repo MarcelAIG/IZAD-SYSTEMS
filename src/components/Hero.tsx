@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { TrustedBy } from './TrustedBy';
 
 const TypewriterOnce = ({ text, delay = 0 }: { text: string, delay?: number }) => {
   const characters = text.split("");
@@ -110,17 +111,26 @@ export function Hero() {
           </motion.p>
           
           <motion.div 
-            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
           >
-            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-full text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
-              Book a Call
+            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
+              Book A Call
             </Link>
-            <Link to="/services" className="w-full sm:w-auto px-10 py-5 rounded-full text-lg font-extrabold text-white transition-colors duration-75 flex items-center justify-center border border-white/20 hover:bg-brand-500 hover:border-brand-500 bg-white/5 shadow-sm">
-              Our Services
+            <Link to="/pricing" className="w-full sm:w-auto px-10 py-5 rounded-md text-lg font-extrabold text-white transition-colors duration-75 flex items-center justify-center border border-white/20 hover:bg-brand-500 hover:border-brand-500 bg-white/5 shadow-sm">
+              Products
             </Link>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
+            className="w-full"
+          >
+            <TrustedBy />
           </motion.div>
         </div>
       </div>

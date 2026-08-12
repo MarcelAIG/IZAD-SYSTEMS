@@ -4,30 +4,37 @@ import { Link } from 'react-router-dom';
 
 const crmTiers = [
   {
-    name: "The Basics",
-    price: "297",
+    name: "Starter Package",
+    price: "197",
     features: [
-      "Full Calendar Setup",
-      "Basic Automated Texting"
+      "New modern website",
+      "Reputation & review management",
+      "Mobile app access",
+      "Website chat integration",
+      "Full mobile optimization"
     ]
   },
   {
-    name: "The Growth System",
-    price: "497",
+    name: "Professional Package",
+    price: "297",
     popular: true,
     features: [
-      "Custom AI CRM Built For You",
-      "Calendar Integration",
-      "Priority VIP Support"
+      "Everything in Starter",
+      "Automatic review requests",
+      "Missed Call Text Back",
+      "Dedicated service pages",
+      "Monthly marketing messages",
+      "Google Business Profile updates"
     ]
   },
   {
-    name: "The Global Empire",
-    price: "697",
+    name: "Maximum Package",
+    price: "497",
     features: [
-      "Fully Custom Everything",
-      "Multiple Languages",
-      "Dedicated Account Manager"
+      "Everything in Professional",
+      "AI Voice Agent",
+      "AI Website Chatbot",
+      "3 Months SEO Optimization"
     ]
   }
 ];
@@ -68,7 +75,7 @@ export function Pricing() {
                 </div>
                 <div className="mb-10 flex items-baseline">
                   <span className="text-6xl font-extrabold text-slate-900 tracking-tighter">${tier.price}</span>
-                  <span className="text-slate-500 font-bold text-lg ml-2">/mo</span>
+                  <span className="text-slate-500 font-bold text-xl ml-2">/month</span>
                 </div>
                 <ul className="space-y-6 mb-12 flex-1">
                   {tier.features.map((feature, fIndex) => (
@@ -80,7 +87,7 @@ export function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/contact" className={`w-full py-4 rounded-full text-center font-bold text-lg transition-all ${tier.popular ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md' : 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'}`}>
+                <Link to="/contact" className={`w-full py-4 rounded-md text-center font-bold text-lg transition-all ${tier.popular ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md' : 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'}`}>
                   Get Started
                 </Link>
               </motion.div>

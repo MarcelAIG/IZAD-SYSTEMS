@@ -5,7 +5,7 @@ import { Footer } from './components/Footer';
 import { MouseTrail } from './components/MouseTrail';
 import { AIVoiceButton } from './components/AIVoiceButton';
 import { Home } from './pages/Home';
-import { ServicesPage } from './pages/Services';
+import { ProductPage } from './pages/Product';
 import { AboutPage } from './pages/About';
 import { PricingPage } from './pages/Pricing';
 import { ContactPage } from './pages/Contact';
@@ -40,7 +40,7 @@ export default function App() {
       <main className="relative z-10 flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/products/:id" element={<ProductPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<ContactPage />} />

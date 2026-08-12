@@ -17,7 +17,9 @@ export function Footer() {
             <h4 className="text-white font-bold mb-6 font-display tracking-wide">Menu</h4>
             <ul className="space-y-4">
               <li><Link to="/" className="text-slate-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/services" className="text-slate-400 hover:text-white transition-colors">Our Services</Link></li>
+              <li><Link to="/products/starter" className="text-slate-400 hover:text-white transition-colors">Starter Package</Link></li>
+              <li><Link to="/products/professional" className="text-slate-400 hover:text-white transition-colors">Professional Package</Link></li>
+              <li><Link to="/products/maximum" className="text-slate-400 hover:text-white transition-colors">Maximum Package</Link></li>
               <li><Link to="/about" className="text-slate-400 hover:text-white transition-colors">About Us</Link></li>
               <li><Link to="/pricing" className="text-slate-400 hover:text-white transition-colors">Pricing</Link></li>
               <li><Link to="/contact" className="text-slate-400 hover:text-white transition-colors">Contact</Link></li>
