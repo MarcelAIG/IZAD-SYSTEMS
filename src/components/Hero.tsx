@@ -1,87 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { TrustedBy } from './TrustedBy';
-
-const TypewriterOnce = ({ text, delay = 0 }: { text: string, delay?: number }) => {
-  const characters = text.split("");
-  return (
-    <span className="inline-block whitespace-pre-wrap">
-      {characters.map((char, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.015, delay: delay + index * 0.015 }}
-        >
-          {char}
-        </motion.span>
-      ))}
-    </span>
-  );
-};
-
-const TypewriterLoop = ({ phrasesList, delayStart = 0 }: { phrasesList: string[], delayStart?: number }) => {
-  const [text, setText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
-  const [hasStarted, setHasStarted] = useState(false);
-
-  // Initial delay before the loop starts
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setHasStarted(true);
-    }, delayStart * 1000);
-    return () => clearTimeout(timer);
-  }, [delayStart]);
-
-  useEffect(() => {
-    if (!hasStarted) return;
-
-    const timer = setTimeout(() => {
-      const i = loopNum % phrasesList.length;
-      const fullText = phrasesList[i];
-
-      setText(
-        isDeleting 
-          ? fullText.substring(0, text.length - 1)
-          : fullText.substring(0, text.length + 1)
-      );
-
-      // Speed configuration:
-      // Typing is faster (40ms), Deleting is very fast (20ms)
-      setTypingSpeed(isDeleting ? 20 : 40);
-
-      if (!isDeleting && text === fullText) {
-        // Pause at the end of the typed word for 2.5 seconds
-        setTimeout(() => setIsDeleting(true), 2500);
-      } else if (isDeleting && text === "") {
-        // Pause briefly before typing the next word
-        setIsDeleting(false);
-        setLoopNum(loopNum + 1);
-        setTypingSpeed(300); 
-      }
-    }, typingSpeed);
-
-    return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, hasStarted]);
-
-  return (
-    <span className="inline">
-      {text}
-      {hasStarted && (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: [0, 1, 0] }}
-          transition={{ repeat: Infinity, duration: 0.8 }}
-          className="inline-block w-[0.4ch] h-[0.8em] bg-brand-500 ml-1 align-baseline"
-        />
-      )}
-    </span>
-  );
-};
 
 export function Hero() {
   return (
@@ -91,13 +11,10 @@ export function Hero() {
 
 
         <div className="text-left max-w-4xl flex flex-col items-start mt-8 relative z-10">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white mb-6 leading-[1.1] font-display min-h-[3em] md:min-h-[2.2em]">
+          <h1 className="text-6xl md:text-[4.25rem] lg:text-[5.25rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
             Website Design & Marketing Systems For <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600 inline-block mt-2 lg:mt-0">
-              <TypewriterLoop 
-                phrasesList={["Contractors", "Med Spas", "Dental clinics", "Beauty salons"]} 
-                delayStart={0.2} 
-              />
+              Contractors
             </span>
           </h1>
           

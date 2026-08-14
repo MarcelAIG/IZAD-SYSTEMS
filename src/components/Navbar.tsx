@@ -1,4 +1,4 @@
-import { Menu, X, ArrowRight, ChevronDown, Globe, MessageSquare, Calendar } from 'lucide-react';
+import { Menu, X, ArrowRight, ChevronDown, Monitor, PhoneForwarded, Inbox, Smartphone, Search, Star, BarChart, ClipboardCheck } from 'lucide-react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -7,6 +7,17 @@ export function Navbar() {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const productItems = [
+    { title: "Functional Website", desc: "Get a lead-generating Website in just days", icon: Monitor, href: "/products/website" },
+    { title: "Missed Call Text Back", desc: "Automatically text back missed calls", icon: PhoneForwarded, href: "/products/missed-call" },
+    { title: "All-In-One Inbox", desc: "Get all your messages in one place", icon: Inbox, href: "/products/inbox" },
+    { title: "Business Phone", desc: "Separate business and personal", icon: Smartphone, href: "/products/phone" },
+    { title: "Local SEO", desc: "Actually get found on Google", icon: Search, href: "/products/seo" },
+    { title: "5-Star Magic Review Funnel", desc: "Get more 5 star reviews and prevent bad ones", icon: Star, href: "/products/reviews" },
+    { title: "One-Click Marketing Campaigns", desc: "Keep your customers thinking about you", icon: BarChart, href: "/products/marketing" },
+    { title: "Automated Lead Follow Up", desc: "Automatically follow up with leads via text", icon: ClipboardCheck, href: "/products/follow-up" },
+  ];
 
   const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) => (
     <Link 
@@ -40,38 +51,25 @@ export function Navbar() {
                 </button>
                 
                 <div className="absolute top-full left-0 pt-6 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-                  <div className="bg-black/95 backdrop-blur-xl border border-white/10 rounded-md shadow-2xl p-2 w-[320px]">
-                    
-                    <Link to="/products/starter" className="flex items-start gap-3 p-3 rounded-md hover:bg-white/5 transition-colors group/item">
-                      <div className="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0 group-hover/item:bg-brand-500/20 transition-colors text-brand-500">
-                        <Globe className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-white font-bold text-sm mb-0.5">Starter Package</div>
-                        <div className="text-slate-400 text-xs">Essential foundation for growth</div>
-                      </div>
-                    </Link>
-                    
-                    <Link to="/products/professional" className="flex items-start gap-3 p-3 rounded-md hover:bg-white/5 transition-colors group/item">
-                      <div className="w-10 h-10 rounded-md bg-brand-500/10 flex items-center justify-center shrink-0 group-hover/item:bg-brand-500/20 transition-colors text-brand-500">
-                        <MessageSquare className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-white font-bold text-sm mb-0.5">Professional Package</div>
-                        <div className="text-slate-400 text-xs">Automation and lead generation</div>
-                      </div>
-                    </Link>
-                    
-                    <Link to="/products/maximum" className="flex items-start gap-3 p-3 rounded-md hover:bg-white/5 transition-colors group/item">
-                      <div className="w-10 h-10 rounded-md bg-brand-500/10 flex items-center justify-center shrink-0 group-hover/item:bg-brand-500/20 transition-colors text-brand-500">
-                        <Calendar className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <div className="text-white font-bold text-sm mb-0.5">Maximum Package</div>
-                        <div className="text-slate-400 text-xs">Full automation with AI</div>
-                      </div>
-                    </Link>
+                  <div className="bg-[var(--color-bg-light)] rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] p-4 w-[700px] border border-white/10">
+                    <div className="px-3 pb-3 mb-2 border-b border-white/10 text-sm font-bold text-white tracking-wide">
+                      Systems & Features
+                    </div>
+                    <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                      
+                      {productItems.map((item, idx) => (
+                        <Link key={idx} to={item.href} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-all group/item border border-transparent hover:border-white/5">
+                          <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center shrink-0 text-brand-400 group-hover/item:bg-brand-500/20 group-hover/item:scale-105 transition-all duration-300">
+                            <item.icon className="w-6 h-6" strokeWidth={1.5} />
+                          </div>
+                          <div>
+                            <div className="text-white font-bold text-base mb-0.5 group-hover/item:text-brand-400 transition-colors">{item.title}</div>
+                            <div className="text-slate-400 text-sm leading-snug">{item.desc}</div>
+                          </div>
+                        </Link>
+                      ))}
 
+                    </div>
                   </div>
                 </div>
               </div>
@@ -108,24 +106,14 @@ export function Navbar() {
             <div className="space-y-1 bg-white/5 rounded-md p-2 border border-white/5">
               <div className={`block px-2 pt-2 pb-3 text-lg font-bold ${location.pathname.startsWith('/products') ? 'text-brand-500' : 'text-slate-300'}`}>Products</div>
               <div className="space-y-1">
-                <Link to="/products/starter" onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
-                  <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
-                    <Globe className="w-4 h-4" />
-                  </div>
-                  <span className="text-slate-200 font-bold text-base">Starter Package</span>
-                </Link>
-                <Link to="/products/professional" onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
-                  <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
-                    <MessageSquare className="w-4 h-4" />
-                  </div>
-                  <span className="text-slate-200 font-bold text-base">Professional Package</span>
-                </Link>
-                <Link to="/products/maximum" onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
-                  <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
-                    <Calendar className="w-4 h-4" />
-                  </div>
-                  <span className="text-slate-200 font-bold text-base">Maximum Package</span>
-                </Link>
+                {productItems.map((item, idx) => (
+                  <Link key={idx} to={item.href} onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
+                    <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
+                      <item.icon className="w-4 h-4" />
+                    </div>
+                    <span className="text-slate-200 font-bold text-base">{item.title}</span>
+                  </Link>
+                ))}
               </div>
             </div>
 
