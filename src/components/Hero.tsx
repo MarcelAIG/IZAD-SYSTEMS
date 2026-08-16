@@ -11,33 +11,24 @@ export function Hero() {
 
 
         <div className="text-left max-w-4xl flex flex-col items-start mt-8 relative z-10">
-          <h1 className="text-6xl md:text-[4.25rem] lg:text-[5.25rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
-            Website Design & Marketing Systems For <br className="hidden lg:block" />
+          <h1 className="text-5xl md:text-[3.5rem] lg:text-[4.5rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
+            Website Design & Marketing Systems for <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600 inline-block mt-2 lg:mt-0">
-              Contractors
+              Local Service Businesses
             </span>
           </h1>
           
-          <motion.p 
-            className="text-xl md:text-2xl text-slate-400 mb-8 max-w-2xl leading-relaxed font-medium"
+          <motion.div 
+            className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-12 w-full max-w-5xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
           >
-            Real systems that make you <strong className="font-bold text-white">more money</strong>, save you <strong className="font-bold text-white">more time</strong>, and <strong className="font-bold text-white">remove the risks</strong> of manual human error.
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-col sm:flex-row items-center gap-6 w-full sm:w-auto mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.4, ease: "easeOut" }}
-          >
-            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
+            <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium max-w-2xl">
+              Local Service Businesses Trust Us To Transform Their Business With Marketing Systems, Website Design, Reputation Management And Automation.
+            </p>
+            <Link to="/contact" className="w-full md:w-auto shrink-0 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
               Book A Call
-            </Link>
-            <Link to="/pricing" className="w-full sm:w-auto px-10 py-5 rounded-md text-lg font-extrabold text-white transition-colors duration-75 flex items-center justify-center border border-white/20 hover:bg-brand-500 hover:border-brand-500 bg-white/5 shadow-sm">
-              Products
             </Link>
           </motion.div>
           
