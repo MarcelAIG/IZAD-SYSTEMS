@@ -72,7 +72,10 @@ function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full transform transition-all duration-500 hover:-translate-y-2 flex justify-center">
       <div className="w-[300px] h-[550px] bg-black rounded-[3rem] p-3 shadow-[0_30px_60px_rgba(0,0,0,0.6)] border-[4px] border-[#333] relative overflow-hidden">
-        <div className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden flex flex-col font-sans relative">
+        <div 
+          className="w-full h-full bg-white rounded-[2.5rem] overflow-hidden flex flex-col font-sans relative isolate"
+          style={{ maskImage: 'radial-gradient(white, black)', WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+        >
           
           {/* iOS Dynamic Island */}
           <div className="absolute top-5 inset-x-0 h-6 flex justify-center z-50 pointer-events-none">
@@ -838,10 +841,10 @@ export function HomeProducts() {
                   transition={{ duration: 0.7, ease: "easeOut" }}
                   className="w-full lg:w-1/2 flex flex-col items-start justify-center"
                 >
-                  <h3 className="text-xl font-bold text-brand-400 mb-4 tracking-wide uppercase">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-display mb-3 leading-tight">
                     {product.category}
                   </h3>
-                  <h4 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-display mb-6 leading-tight">
+                  <h4 className="text-xl md:text-2xl font-bold text-brand-400 mb-6 tracking-wide">
                     {product.title}
                   </h4>
                   <p className="text-lg md:text-xl text-slate-400 mb-8 leading-relaxed max-w-lg">
