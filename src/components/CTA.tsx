@@ -28,7 +28,6 @@ export function CTA() {
             </p>
             <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-14 py-6 rounded-md text-xl font-extrabold transition-all duration-300 flex items-center justify-center mx-auto group shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
               Book a call with us
-              <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </div>
         </motion.div>

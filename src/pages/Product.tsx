@@ -1,6 +1,7 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Globe, MessageSquare, Calendar, Check, ArrowRight } from 'lucide-react';
+import { Globe, MessageSquare, Calendar } from 'lucide-react';
+import { BrandCheck } from '../components/BrandCheck';
 import { CTA } from '../components/CTA';
 
 const products: Record<string, any> = {
@@ -82,7 +83,6 @@ export function ProductPage() {
             
             <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 group">
               Book A Call
-              <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
           </motion.div>
           
@@ -98,9 +98,7 @@ export function ProductPage() {
             <ul className="space-y-6">
               {product.description.map((point: string, i: number) => (
                 <li key={i} className="flex items-start">
-                  <div className="w-6 h-6 rounded-full bg-brand-500/20 flex items-center justify-center shrink-0 mr-4 mt-0.5 border border-brand-500/30">
-                    <Check className="w-3.5 h-3.5 text-brand-400" />
-                  </div>
+                  <BrandCheck className="w-6 h-6 mr-4 mt-1" />
                   <span className="text-slate-300 text-lg font-medium leading-relaxed">{point}</span>
                 </li>
               ))}

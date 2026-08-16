@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { CheckCircle2, User, Play } from 'lucide-react';
+import { User, Play } from 'lucide-react';
+import { BrandCheck } from '../BrandCheck';
 
 const products = [
   {
@@ -853,7 +854,7 @@ export function HomeProducts() {
                   <ul className="space-y-4 mb-10">
                     {product.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <CheckCircle2 className="w-6 h-6 text-brand-500 mr-3 shrink-0 mt-0.5" />
+                        <BrandCheck className="w-6 h-6 mr-3 shrink-0 mt-0.5" />
                         <span className="text-slate-300 text-lg">{feature}</span>
                       </li>
                     ))}

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Send, UserPlus, Clock, MessageCircle, CheckCircle } from 'lucide-react';
+import { Send, UserPlus, Clock, MessageCircle } from 'lucide-react';
+import { BrandCheck } from '../components/BrandCheck';
 import { CTA } from '../components/CTA';
 
 export function MissedCallProductPage() {
@@ -43,7 +44,7 @@ export function MissedCallProductPage() {
     {
       title: "Simple & Automatic",
       description: "No extra work. Missed call → automatic text → conversation started.",
-      icon: CheckCircle
+      icon: BrandCheck
     }
   ];
 
@@ -68,7 +69,6 @@ export function MissedCallProductPage() {
           </p>
           <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 group">
             Book A Call
-            <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </Link>
         </motion.div>
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Check } from 'lucide-react';
+import { Shield, Sparkles } from 'lucide-react';
+import { BrandCheck } from '../components/BrandCheck';
 import { Link } from 'react-router-dom';
 import { CTA } from '../components/CTA';
 
@@ -159,7 +160,7 @@ export function PricingPage() {
               <ul className="space-y-4 mb-10 flex-grow">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-4">
-                    <Check className="w-6 h-6 mt-0.5 shrink-0 text-brand-500" />
+                    <BrandCheck className="w-6 h-6 mt-0.5 shrink-0 text-brand-500" />
                     <span className="text-slate-200 text-lg font-medium">{feature}</span>
                   </li>
                 ))}

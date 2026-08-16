@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
-import { Check, Star } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { BrandCheck } from './BrandCheck';
 
 const crmTiers = [
   {
@@ -79,10 +80,8 @@ export function Pricing() {
                 </div>
                 <ul className="space-y-6 mb-12 flex-1">
                   {tier.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-center">
-                      <div className="w-6 h-6 rounded-full bg-brand-50 flex items-center justify-center shrink-0 mr-4 border border-brand-100 group-hover:bg-brand-100 transition-colors duration-300">
-                        <Check className="w-3.5 h-3.5 text-brand-500" />
-                      </div>
+                    <li key={fIndex} className="flex items-start">
+                      <BrandCheck className="w-6 h-6 shrink-0 mr-4 mt-0.5" />
                       <span className="text-slate-700 font-bold text-base">{feature}</span>
                     </li>
                   ))}

@@ -1,5 +1,5 @@
-import { Menu, X, ArrowRight, ChevronDown, Monitor, PhoneForwarded, Inbox, Smartphone, Search, Star, BarChart, ClipboardCheck } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, ChevronDown, Monitor, PhoneForwarded, Inbox, Smartphone, Search, Star, BarChart, ClipboardCheck } from 'lucide-react';
+import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export function Navbar() {

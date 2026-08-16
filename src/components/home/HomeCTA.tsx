@@ -34,12 +34,7 @@ export function HomeCTA() {
               className="inline-flex items-center justify-center bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-10 py-5 rounded-full text-xl font-extrabold transition-all duration-300 shadow-[0_0_40px_rgba(14,165,233,0.4)] border border-transparent hover:border-brand-500 group/btn mb-6"
             >
               Book a Quick Demo
-              <ArrowRight className="ml-3 w-6 h-6 group-hover/btn:translate-x-1 transition-transform duration-300" />
             </Link>
-            
-            <p className="text-sm text-slate-500 max-w-xs mx-auto">
-              See how the system could work for your business. No complicated presentation.
-            </p>
           </div>
         </motion.div>
       </div>
