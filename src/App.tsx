@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { MouseTrail } from './components/MouseTrail';
 import { AIVoiceButton } from './components/AIVoiceButton';
 import { Home } from './pages/Home';
 import { WebsiteProductPage } from './pages/WebsiteProduct';
@@ -26,7 +25,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--color-bg-light)] text-black selection:bg-brand-500/30 selection:text-brand-900 flex flex-col relative overflow-x-hidden">
       <ScrollToTop />
-      <MouseTrail />
       <AIVoiceButton />
       
       {/* Deep, dark background with subtle atmospheric blue on left */}
