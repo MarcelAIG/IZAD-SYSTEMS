@@ -448,7 +448,8 @@ function InteractiveFollowUpMockup() {
            </div>
            
            <div className="flex-1 p-4 flex flex-col relative overflow-hidden">
-              <div className="flex justify-center mb-4">
+              <div className={`flex flex-col transition-transform duration-700 ease-in-out ${step >= 8 ? '-translate-y-44' : 'translate-y-0'}`}>
+                <div className="flex justify-center mb-4">
                  <div className="bg-gray-200/80 text-gray-500 text-[10px] font-semibold px-3 py-1 rounded-full">Today</div>
               </div>
 
@@ -491,7 +492,8 @@ function InteractiveFollowUpMockup() {
                      - Your Business
                   </div>
                 </div>
-              </div>
+               </div>
+             </div>
            </div>
            
            <div className="p-3 border-t border-gray-200 bg-white pb-6 shrink-0 relative z-10">
@@ -543,14 +545,14 @@ function InteractiveLocalSEOMockup() {
         
         {/* SCENE 1: Google Search */}
         <div className={`absolute inset-0 bg-[#f8f9fa] transition-opacity duration-500 flex flex-col ${step <= 3 ? 'opacity-100 z-30' : 'opacity-0 z-0 pointer-events-none'}`}>
-          <div className="pt-12 pb-2 px-4 shadow-[0_1px_4px_rgba(0,0,0,0.05)] bg-white relative z-10">
-             <div className="flex items-center gap-3">
+          <div className="pt-16 pb-3 px-6 shadow-[0_1px_4px_rgba(0,0,0,0.05)] bg-white relative z-10">
+             <div className="flex items-center gap-2.5">
                 {/* Search Bar */}
                 <div className="flex-1 bg-white border border-gray-200 shadow-sm rounded-full h-10 flex items-center px-4 relative overflow-hidden">
                    <div className="text-lg font-bold text-[#4285F4] mr-2 -mt-0.5">G</div>
                    <div className="relative flex-1 h-full flex items-center">
                       <span className={`text-gray-800 text-[13px] absolute left-0 transition-opacity ${step >= 2 ? 'opacity-100' : 'opacity-0'}`}>
-                         plumber near me
+                         service near me
                       </span>
                    </div>
                 </div>
@@ -588,7 +590,7 @@ function InteractiveLocalSEOMockup() {
                       </div>
                       <span className="text-[11px] text-gray-500 ml-1">(248)</span>
                    </div>
-                   <div className="text-[11px] text-gray-600 mb-3">Plumbing Services ⋅ Open 24/7</div>
+                   <div className="text-[11px] text-gray-600 mb-3">Local Services ⋅ Open 24/7</div>
                    <div className="flex gap-2">
                       <div className="flex-1 bg-white border border-gray-300 text-blue-600 font-semibold text-[11px] py-1.5 rounded-full flex justify-center items-center gap-1.5 shadow-sm"><svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> Call</div>
                       <div className="flex-1 bg-white border border-gray-300 text-blue-600 font-semibold text-[11px] py-1.5 rounded-full flex justify-center items-center gap-1.5 shadow-sm">Directions</div>
@@ -701,9 +703,9 @@ function InteractiveWebsiteMockup() {
   return (
     <PhoneFrame>
       {/* Mobile Browser Header */}
-      <div className="bg-[#111] pt-14 pb-2 px-4 border-b border-gray-800 flex items-center justify-center relative z-20 shrink-0">
+      <div className="bg-[#111] pt-14 pb-2 px-4 border-b border-gray-800 flex items-center justify-center relative z-20 shrink-0 overflow-hidden">
          <div className="bg-[#222] text-gray-400 text-[10px] px-6 py-1.5 rounded-full flex items-center gap-1.5 font-medium shadow-inner">
-            <span className="opacity-70 text-[8px]">🔒</span> premier-plumbing.com
+            <span className="opacity-70 text-[8px]">🔒</span> your-website.com
          </div>
       </div>
       
@@ -720,7 +722,7 @@ function InteractiveWebsiteMockup() {
            {/* Nav */}
            <div className="flex justify-between items-center p-5 relative z-10">
               <div className="font-black text-lg tracking-tighter text-white flex items-center gap-1">
-                 <span className="text-brand-500">PREMIER</span>
+                 <span className="text-brand-500">LOGO</span>
               </div>
               <div className="w-5 h-4 flex flex-col justify-between opacity-80">
                  <div className="w-full h-0.5 bg-white rounded-full"></div>
@@ -731,9 +733,9 @@ function InteractiveWebsiteMockup() {
            
            {/* Hero */}
            <div className="px-5 pt-2 pb-4 text-center relative z-10">
-              <div className="text-brand-400 text-[8px] font-bold tracking-widest uppercase mb-2">Fast, Local Plumbing Service</div>
-              <h4 className="text-[26px] font-black text-white mb-3 tracking-tight leading-[1.1] uppercase">Water's Rising.<br/>We're On The Way.</h4>
-              <p className="text-gray-300 text-[11px] mb-5 leading-relaxed">Fast, reliable plumbing help for homes and businesses. Call now or request service online.</p>
+              <div className="text-brand-400 text-[8px] font-bold tracking-widest uppercase mb-2">Fast, Local Service Provider</div>
+              <h4 className="text-[26px] font-black text-white mb-3 tracking-tight leading-[1.1] uppercase">Headline Here.<br/>Action Focused.</h4>
+              <p className="text-gray-300 text-[11px] mb-5 leading-relaxed">Clear, compelling description of your services that drives visitors to take action immediately.</p>
               
               {/* Buttons */}
               <div className="flex flex-col gap-2">
@@ -771,20 +773,15 @@ function InteractiveWebsiteMockup() {
               <div className="grid grid-cols-2 gap-3">
                  <div className="bg-[#111] border border-gray-800 rounded-xl p-4 text-center">
                    <div className="w-8 h-8 bg-blue-500/20 rounded-full mx-auto mb-2 flex items-center justify-center text-blue-500">⚡</div>
-                   <div className="text-gray-300 text-[10px] font-bold uppercase">Emergency</div>
+                   <div className="text-gray-300 text-[10px] font-bold uppercase">Service 1</div>
                  </div>
                  <div className="bg-[#111] border border-gray-800 rounded-xl p-4 text-center">
                    <div className="w-8 h-8 bg-red-500/20 rounded-full mx-auto mb-2 flex items-center justify-center text-red-500">🔧</div>
-                   <div className="text-gray-300 text-[10px] font-bold uppercase">Repairs</div>
+                   <div className="text-gray-300 text-[10px] font-bold uppercase">Service 2</div>
                  </div>
               </div>
            </div>
          </motion.div>
-         
-         {/* Floating chat (Fixed positioning so it stays at the bottom while scrolling) */}
-         <div className="absolute bottom-4 right-4 w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-600/40 z-20">
-            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-         </div>
       </div>
     </PhoneFrame>
   );
