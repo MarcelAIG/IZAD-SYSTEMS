@@ -57,9 +57,7 @@ export function WebsiteProductPage() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex flex-col items-center"
         >
-          <span className="bg-brand-500/20 text-brand-400 font-bold tracking-widest uppercase text-xs px-4 py-1.5 rounded-full mb-6 border border-brand-500/30">
-            Functional Website
-          </span>
+
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight max-w-4xl mx-auto">
             More Than Just a <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Website</span>
           </h1>
