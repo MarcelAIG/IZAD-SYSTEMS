@@ -83,9 +83,9 @@ export function Navbar() {
           {/* Right side: CTA Button (Desktop) & Mobile Toggle */}
           <div className="flex items-center">
             <div className="hidden md:block">
-              <Link to="/contact" className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-7 py-3 rounded-md text-base font-extrabold transition-all duration-300 flex items-center shadow-[0_0_20px_rgba(14,165,233,0.3)] border border-brand-400/30 hover:border-brand-500">
+              <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-7 py-3 rounded-md text-base font-extrabold transition-all duration-300 flex items-center shadow-[0_0_20px_rgba(14,165,233,0.3)] border border-brand-400/30 hover:border-brand-500">
                 Book A Call
-              </Link>
+              </a>
             </div>
             
             <div className="md:hidden">
@@ -122,9 +122,9 @@ export function Navbar() {
             <Link to="/about" onClick={() => setIsOpen(false)} className={`block px-4 py-4 text-lg font-bold rounded-md ${isActive('/about') ? 'text-brand-500 bg-white/5' : 'text-slate-400 hover:text-brand-500 hover:bg-brand-500/10'}`}>About</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className={`block px-4 py-4 text-lg font-bold rounded-md ${isActive('/contact') ? 'text-brand-500 bg-white/5' : 'text-slate-400 hover:text-brand-500 hover:bg-brand-500/10'}`}>Contact</Link>
             
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="block w-full mt-6 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-6 py-5 rounded-md text-lg font-extrabold transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)] border border-brand-400/30 hover:border-brand-500 text-center">
+            <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="block w-full mt-6 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-6 py-5 rounded-md text-lg font-extrabold transition-all duration-300 shadow-[0_0_20px_rgba(14,165,233,0.3)] border border-brand-400/30 hover:border-brand-500 text-center">
               Book A Call
-            </Link>
+            </a>
           </div>
         </div>
       )}

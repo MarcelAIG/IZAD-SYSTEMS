@@ -129,9 +129,9 @@ export function About() {
               </div>
 
               <div className="mt-10">
-                <Link to="/contact" className="inline-flex items-center font-extrabold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black hover:text-brand-500 px-8 py-4 rounded-md transition-all duration-300 shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
+                <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" className="inline-flex items-center font-extrabold text-white bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black hover:text-brand-500 px-8 py-4 rounded-md transition-all duration-300 shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
                   Book A Call
-                </Link>
+                </a>
               </div>
             </motion.div>
           </div>

@@ -166,12 +166,11 @@ export function PricingPage() {
                 ))}
               </ul>
               
-              <Link 
-                to="/contact" 
+              <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" 
                 className={`w-full py-4 rounded-md font-extrabold flex items-center justify-center text-lg uppercase tracking-wide ${tier.buttonStyles}`}
               >
                 BOOK A CALL
-              </Link>
+              </a>
             </div>
           ))}
         </div>

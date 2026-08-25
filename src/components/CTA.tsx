@@ -26,9 +26,9 @@ export function CTA() {
             <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
               If you want to keep doing everything manually, that's on you. If you want to scale up without burning out, let's talk.
             </p>
-            <Link to="/contact" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-14 py-6 rounded-md text-xl font-extrabold transition-all duration-300 flex items-center justify-center mx-auto group shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
+            <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-14 py-6 rounded-md text-xl font-extrabold transition-all duration-300 flex items-center justify-center mx-auto group shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500">
               Book a call with us
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>

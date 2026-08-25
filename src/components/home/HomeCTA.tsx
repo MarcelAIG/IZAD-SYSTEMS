@@ -29,12 +29,11 @@ export function HomeCTA() {
           </p>
 
           <div className="flex flex-col items-center">
-            <Link
-              to="/contact"
+            <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white hover:text-brand-500 px-10 py-5 rounded-full text-xl font-extrabold transition-all duration-300 shadow-[0_0_40px_rgba(14,165,233,0.4)] border border-transparent hover:border-brand-500 group/btn mb-6"
             >
               Book a Quick Demo
-            </Link>
+            </a>
           </div>
         </motion.div>
       </div>
