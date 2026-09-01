@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 const faqs = [
   {
@@ -42,7 +42,7 @@ export function HomeFAQ() {
           </h2>
         </motion.div>
 
-        <div className="space-y-4">
+        <div className="border-t border-white/10">
           {faqs.map((faq, i) => (
             <motion.div
               key={i}
@@ -50,17 +50,17 @@ export function HomeFAQ() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-black/40 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-brand-500/30 transition-colors"
+              className="border-b border-white/10"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
-                className="w-full px-6 py-6 flex items-center justify-between text-left focus:outline-none group"
+                className="w-full py-8 flex items-center justify-between text-left focus:outline-none group"
               >
-                <span className="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">
+                <span className="text-xl md:text-2xl font-bold text-white group-hover:text-brand-400 transition-colors">
                   {faq.question}
                 </span>
-                <div className={`w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0 ml-4 transition-transform duration-300 ${openIndex === i ? 'rotate-180 bg-brand-500/20 text-brand-400' : 'text-slate-400'}`}>
-                  <ChevronDown className="w-5 h-5" />
+                <div className={`shrink-0 ml-6 transition-transform duration-500 ease-in-out ${openIndex === i ? 'rotate-45 text-brand-400' : 'text-slate-400 group-hover:text-white'}`}>
+                  <Plus className="w-8 h-8" strokeWidth={1.5} />
                 </div>
               </button>
               
@@ -70,9 +70,10 @@ export function HomeFAQ() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                    className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 text-slate-400 text-lg leading-relaxed">
+                    <div className="pb-8 pr-12 text-slate-400 text-lg md:text-xl leading-relaxed font-medium">
                       {faq.answer}
                     </div>
                   </motion.div>

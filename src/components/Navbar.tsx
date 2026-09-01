@@ -12,10 +12,8 @@ export function Navbar() {
     { title: "Functional Website", desc: "Get a lead-generating Website in just days", icon: Monitor, href: "/products/website" },
     { title: "Missed Call Text Back", desc: "Automatically text back missed calls", icon: PhoneForwarded, href: "/products/missed-call" },
     { title: "All-In-One Inbox", desc: "Get all your messages in one place", icon: Inbox, href: "/products/inbox" },
-    { title: "Business Phone", desc: "Separate business and personal", icon: Smartphone, href: "/products/phone" },
-    { title: "Local SEO", desc: "Actually get found on Google", icon: Search, href: "/products/seo" },
     { title: "5-Star Magic Review Funnel", desc: "Get more 5 star reviews and prevent bad ones", icon: Star, href: "/products/reviews" },
-    { title: "One-Click Marketing Campaigns", desc: "Keep your customers thinking about you", icon: BarChart, href: "/products/marketing" },
+    { title: "One-Click Marketing Campaigns", desc: "Stay top of mind", icon: BarChart, href: "/products/marketing" },
     { title: "Automated Lead Follow Up", desc: "Automatically follow up with leads via text", icon: ClipboardCheck, href: "/products/follow-up" },
   ];
 

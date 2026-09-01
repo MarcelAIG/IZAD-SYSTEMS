@@ -25,7 +25,7 @@ export function PricingPage() {
     }
   }, [isAnnual]);
 
-  const tiers = [
+    const tiers = [
     {
       name: "Starter",
       monthlyPrice: "$197",
@@ -38,7 +38,7 @@ export function PricingPage() {
         "On-Site SEO"
       ],
       popular: false,
-      buttonStyles: "bg-transparent border-2 border-brand-500 text-white hover:bg-brand-500 hover:text-white transition-none",
+      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
       name: "Advanced",
@@ -70,11 +70,11 @@ export function PricingPage() {
           <span className={`text-lg font-medium transition-colors ${!isAnnual ? 'text-white' : 'text-slate-500'}`}>Monthly</span>
           <button 
             onClick={() => setIsAnnual(!isAnnual)}
-            className="w-16 h-8 bg-[#222] border border-[#333] rounded-full p-1 relative flex items-center shadow-inner"
+            className={`w-16 h-8 border rounded-full p-1 relative flex items-center shadow-inner transition-colors duration-300 ${isAnnual ? 'bg-brand-500 border-brand-500' : 'bg-[#222] border-[#333]'}`}
           >
             <motion.div 
               layout
-              className="w-6 h-6 bg-brand-500 rounded-full shadow-[0_0_10px_rgba(14,165,233,0.5)]"
+              className={`w-6 h-6 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] ${isAnnual ? 'bg-white' : 'bg-brand-500'}`}
               animate={{ x: isAnnual ? 32 : 0 }}
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
@@ -84,31 +84,31 @@ export function PricingPage() {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
             <div 
               key={index}
-              className={`relative flex flex-col p-8 lg:p-10 rounded-2xl border transition-none ${
+              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full ${
                 tier.popular 
                   ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
                   : 'bg-[#111] border-brand-500/20'
               }`}
             >
               {tier.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-5 py-1.5 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
                   MOST POPULAR
                 </div>
               )}
               
-              <div className="mb-6">
-                <h3 className="text-3xl font-bold text-white mb-2 font-display">{tier.name}</h3>
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
               </div>
               
-              <div className="mb-10 min-h-[140px] flex flex-col justify-center">
+              <div className="mb-8 min-h-[120px] flex flex-col justify-center">
                 {!isAnnual ? (
                   <div className="flex items-baseline gap-2">
-                    <span className="text-6xl font-extrabold text-white tracking-tight">{tier.monthlyPrice}</span>
-                    <span className="text-slate-400 font-bold text-xl">/mo</span>
+                    <span className="text-5xl font-extrabold text-white tracking-tight">{tier.monthlyPrice}</span>
+                    <span className="text-slate-400 font-bold text-lg">/mo</span>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2">
@@ -122,8 +122,8 @@ export function PricingPage() {
                       transition={{ duration: 0.3 }}
                       className="relative inline-flex items-baseline gap-2 w-fit"
                     >
-                      <span className="text-6xl font-extrabold tracking-tight text-white">{tier.annualOriginal}</span>
-                      <span className="font-bold text-xl text-slate-400">/yr</span>
+                      <span className="text-5xl font-extrabold tracking-tight text-white">{tier.annualOriginal}</span>
+                      <span className="font-bold text-lg text-slate-400">/yr</span>
                       
                       {/* Red Strikethrough Line */}
                       {annualPhase > 0 && (
@@ -131,7 +131,7 @@ export function PricingPage() {
                           initial={{ scaleX: 0 }}
                           animate={{ scaleX: 1 }}
                           transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="absolute left-0 top-1/2 w-full h-2 bg-red-600 origin-left -translate-y-1/2 rounded-full"
+                          className="absolute left-0 top-1/2 w-full h-1.5 bg-red-600 origin-left -translate-y-1/2 rounded-full"
                         />
                       )}
                     </motion.div>
@@ -144,10 +144,10 @@ export function PricingPage() {
                           className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2"
                         >
                           <div className="flex items-baseline gap-1">
-                            <span className="text-5xl font-extrabold text-white tracking-tight">{tier.annualDiscounted}</span>
-                            <span className="text-slate-400 font-bold text-lg">/yr</span>
+                             <span className="text-4xl font-extrabold text-white tracking-tight">{tier.annualDiscounted}</span>
+                             <span className="text-slate-400 font-bold text-base">/yr</span>
                           </div>
-                          <span className="animate-pulse bg-red-500/10 text-red-500 font-bold px-3 py-1.5 rounded-md text-sm border border-red-500/30 whitespace-nowrap self-start sm:self-auto">
+                          <span className="bg-brand-500/10 text-brand-400 font-bold px-3 py-1.5 rounded-md text-xs border border-brand-500/30 whitespace-nowrap self-start sm:self-auto">
                             3 months FREE
                           </span>
                         </motion.div>
@@ -157,17 +157,17 @@ export function PricingPage() {
                 )}
               </div>
               
-              <ul className="space-y-4 mb-10 flex-grow">
+              <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-4">
-                    <BrandCheck className="w-6 h-6 mt-0.5 shrink-0 text-brand-500" />
-                    <span className="text-slate-200 text-lg font-medium">{feature}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <BrandCheck className="w-5 h-5 mt-0.5 shrink-0 text-brand-500" />
+                    <span className="text-slate-200 text-base font-medium">{feature}</span>
                   </li>
                 ))}
               </ul>
               
               <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" 
-                className={`w-full py-4 rounded-md font-extrabold flex items-center justify-center text-lg uppercase tracking-wide ${tier.buttonStyles}`}
+                className={`w-full py-3 rounded-md font-extrabold flex items-center justify-center text-base uppercase tracking-wide mt-auto ${tier.buttonStyles}`}
               >
                 BOOK A CALL
               </a>

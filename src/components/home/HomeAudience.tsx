@@ -37,7 +37,7 @@ export function HomeAudience() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white font-display mb-6 tracking-tight">
             Built for Local Service Businesses
           </h2>
-          <p className="text-xl md:text-2xl text-slate-400 font-medium max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl text-slate-400 font-medium whitespace-nowrap overflow-hidden text-ellipsis px-4">
             For businesses that rely on calls, quotes, bookings, and local customers.
           </p>
         </div>

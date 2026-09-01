@@ -54,18 +54,6 @@ const products = [
     ],
     buttonLink: "/products/follow-up"
   },
-  {
-    category: "Local SEO",
-    title: "Be Easier to Find When Customers Need You",
-    description: "We optimize your online presence so your business has a stronger foundation for local Google searches.",
-    features: [
-      "Local search optimization",
-      "Website SEO foundation",
-      "Service-area targeting",
-      "Google-friendly structure"
-    ],
-    buttonLink: "/products/seo"
-  }
 ];
 
 function PhoneFrame({ children }: { children: React.ReactNode }) {
