@@ -6,6 +6,10 @@ import { AIVoiceButton } from './components/AIVoiceButton';
 import { Home } from './pages/Home';
 import { WebsiteProductPage } from './pages/WebsiteProduct';
 import { MissedCallProductPage } from './pages/MissedCallProduct';
+import { InboxProductPage } from './pages/InboxProduct';
+import { ReviewsProductPage } from './pages/ReviewsProduct';
+import { MarketingProductPage } from './pages/MarketingProduct';
+import { FollowUpProductPage } from './pages/FollowUpProduct';
 import { ProductPage } from './pages/Product';
 import { AboutPage } from './pages/About';
 import { PricingPage } from './pages/Pricing';
@@ -42,7 +46,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products/website" element={<WebsiteProductPage />} />
           <Route path="/products/missed-call" element={<MissedCallProductPage />} />
-          <Route path="/products/:id" element={<ProductPage />} />
+          <Route path="/products/inbox" element={<InboxProductPage />} />
+          <Route path="/products/reviews" element={<ReviewsProductPage />} />
+          <Route path="/products/marketing" element={<MarketingProductPage />} />
+          <Route path="/products/follow-up" element={<FollowUpProductPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<ContactPage />} />
