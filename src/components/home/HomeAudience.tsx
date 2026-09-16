@@ -1,29 +1,35 @@
+import { 
+  Droplet, Hammer, Zap, Fan, TreePine, Paintbrush, Wrench, Sparkles, 
+  Ruler, HardHat, Grid, LayoutTemplate, Bug, Key, ArrowUpSquare, 
+  Waves, Axe, Truck, PenTool, Car, Heart, Smile, Flower2, Activity, Store 
+} from 'lucide-react';
+
 const industries = [
-  { name: "Plumbers", image: "https://loremflickr.com/800/600/plumber,contractor/all?lock=1" },
-  { name: "Roofers", image: "https://loremflickr.com/800/600/roofer,construction/all?lock=2" },
-  { name: "Electricians", image: "https://loremflickr.com/800/600/electrician,worker/all?lock=3" },
-  { name: "HVAC", image: "https://loremflickr.com/800/600/hvac,technician/all?lock=4" },
-  { name: "Landscapers", image: "https://loremflickr.com/800/600/landscaping,gardener/all?lock=5" },
-  { name: "Painters", image: "https://loremflickr.com/800/600/painter,painting/all?lock=6" },
-  { name: "Handyman", image: "https://loremflickr.com/800/600/handyman,tools/all?lock=7" },
-  { name: "Cleaning Companies", image: "https://loremflickr.com/800/600/cleaning,house/all?lock=8" },
-  { name: "Remodelers", image: "https://loremflickr.com/800/600/remodeling,kitchen/all?lock=9" },
-  { name: "General Contractors", image: "https://loremflickr.com/800/600/contractor,builder/all?lock=10" },
-  { name: "Flooring", image: "https://loremflickr.com/800/600/flooring,wood/all?lock=11" },
-  { name: "Window & Door", image: "https://loremflickr.com/800/600/window,installation/all?lock=12" },
-  { name: "Pest Control", image: "https://loremflickr.com/800/600/pest,control/all?lock=13" },
-  { name: "Locksmiths", image: "https://loremflickr.com/800/600/locksmith,keys/all?lock=14" },
-  { name: "Garage Door", image: "https://loremflickr.com/800/600/garage,repair/all?lock=15" },
-  { name: "Pool Services", image: "https://loremflickr.com/800/600/swimming,pool/all?lock=16" },
-  { name: "Tree Services", image: "https://loremflickr.com/800/600/tree,arborist/all?lock=17" },
-  { name: "Moving Companies", image: "https://loremflickr.com/800/600/moving,boxes/all?lock=18" },
-  { name: "Auto Repair", image: "https://loremflickr.com/800/600/mechanic,car/all?lock=19" },
-  { name: "Car Detailing", image: "https://loremflickr.com/800/600/car,detailing/all?lock=20" },
-  { name: "Dog Groomers", image: "https://loremflickr.com/800/600/dog,grooming/all?lock=21" },
-  { name: "Dentists", image: "https://loremflickr.com/800/600/dentist,clinic/all?lock=22" },
-  { name: "Med Spas", image: "https://loremflickr.com/800/600/spa,massage/all?lock=23" },
-  { name: "Physiotherapy", image: "https://loremflickr.com/800/600/physiotherapy,therapy/all?lock=24" },
-  { name: "Other Local Services", image: "https://loremflickr.com/800/600/business,local/all?lock=25" }
+  { name: "Plumbers", icon: Droplet, color: "from-blue-500 to-cyan-500" },
+  { name: "Roofers", icon: Hammer, color: "from-orange-500 to-red-500" },
+  { name: "Electricians", icon: Zap, color: "from-yellow-400 to-orange-500" },
+  { name: "HVAC", icon: Fan, color: "from-cyan-500 to-blue-600" },
+  { name: "Landscapers", icon: TreePine, color: "from-green-500 to-emerald-600" },
+  { name: "Painters", icon: Paintbrush, color: "from-pink-500 to-rose-500" },
+  { name: "Handyman", icon: Wrench, color: "from-slate-500 to-gray-700" },
+  { name: "Cleaning Companies", icon: Sparkles, color: "from-sky-400 to-indigo-500" },
+  { name: "Remodelers", icon: Ruler, color: "from-amber-500 to-orange-600" },
+  { name: "General Contractors", icon: HardHat, color: "from-yellow-500 to-amber-600" },
+  { name: "Flooring", icon: Grid, color: "from-stone-500 to-amber-700" },
+  { name: "Window & Door", icon: LayoutTemplate, color: "from-blue-400 to-indigo-500" },
+  { name: "Pest Control", icon: Bug, color: "from-emerald-500 to-teal-700" },
+  { name: "Locksmiths", icon: Key, color: "from-yellow-400 to-amber-500" },
+  { name: "Garage Door", icon: ArrowUpSquare, color: "from-slate-400 to-slate-600" },
+  { name: "Pool Services", icon: Waves, color: "from-cyan-400 to-blue-500" },
+  { name: "Tree Services", icon: Axe, color: "from-green-600 to-emerald-800" },
+  { name: "Moving Companies", icon: Truck, color: "from-indigo-500 to-purple-600" },
+  { name: "Auto Repair", icon: PenTool, color: "from-gray-600 to-slate-800" },
+  { name: "Car Detailing", icon: Car, color: "from-sky-400 to-blue-600" },
+  { name: "Dog Groomers", icon: Heart, color: "from-rose-400 to-pink-600" },
+  { name: "Dentists", icon: Smile, color: "from-cyan-300 to-blue-500" },
+  { name: "Med Spas", icon: Flower2, color: "from-fuchsia-400 to-purple-500" },
+  { name: "Physiotherapy", icon: Activity, color: "from-blue-500 to-indigo-600" },
+  { name: "Other Local Services", icon: Store, color: "from-slate-600 to-gray-800" }
 ];
 
 export function HomeAudience() {
@@ -50,60 +56,50 @@ export function HomeAudience() {
           {/* Row 1 */}
           <div className="flex overflow-hidden group">
             <div className="flex w-max space-x-6 animate-marquee group-hover:[animation-play-state:paused] pr-6">
-              {[...industries.slice(0, 13), ...industries.slice(0, 13)].map((industry, i) => (
-                <div
-                  key={i}
-                  className="w-[280px] sm:w-[320px] shrink-0 group/card relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-brand-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] flex flex-col h-full cursor-pointer"
-                >
-                  <div className="relative h-40 sm:h-48 overflow-hidden bg-slate-900">
-                    <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay z-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
-                    <img
-                      src={industry.image}
-                      alt={`${industry.name} services`}
-                      className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-500"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = 'https://images.unsplash.com/photo-1542039556-9f379101d2d3?auto=format&fit=crop&q=80&w=800'; // Fallback
-                      }}
-                    />
+              {[...industries.slice(0, 13), ...industries.slice(0, 13)].map((industry, i) => {
+                const Icon = industry.icon;
+                return (
+                  <div
+                    key={i}
+                    className="w-[280px] sm:w-[320px] shrink-0 group/card relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-brand-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] flex flex-col h-full cursor-pointer"
+                  >
+                    <div className={`relative h-40 sm:h-48 overflow-hidden bg-gradient-to-br ${industry.color} flex items-center justify-center`}>
+                      <div className="absolute inset-0 bg-black/20 mix-blend-overlay z-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
+                      <Icon className="w-20 h-20 text-white opacity-90 transform group-hover/card:scale-110 transition-transform duration-500 drop-shadow-xl" />
+                    </div>
+                    <div className="p-5 bg-white/5 backdrop-blur-md border-t border-white/5 flex-grow flex items-center justify-center">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-200 text-center group-hover/card:text-white transition-colors">
+                        {industry.name}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="p-5 bg-white/5 backdrop-blur-md border-t border-white/5 flex-grow flex items-center justify-center">
-                    <h3 className="text-base sm:text-lg font-bold text-slate-200 text-center group-hover/card:text-white transition-colors">
-                      {industry.name}
-                    </h3>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
           {/* Row 2 */}
           <div className="flex overflow-hidden group">
             <div className="flex w-max space-x-6 animate-marquee-reverse group-hover:[animation-play-state:paused] pr-6">
-              {[...industries.slice(13), ...industries.slice(13)].map((industry, i) => (
-                <div
-                  key={i}
-                  className="w-[280px] sm:w-[320px] shrink-0 group/card relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-brand-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] flex flex-col h-full cursor-pointer"
-                >
-                  <div className="relative h-40 sm:h-48 overflow-hidden bg-slate-900">
-                    <div className="absolute inset-0 bg-brand-primary/20 mix-blend-overlay z-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
-                    <img
-                      src={industry.image}
-                      alt={`${industry.name} services`}
-                      className="w-full h-full object-cover transform group-hover/card:scale-110 transition-transform duration-500"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = 'https://images.unsplash.com/photo-1542039556-9f379101d2d3?auto=format&fit=crop&q=80&w=800'; // Fallback
-                      }}
-                    />
+              {[...industries.slice(13), ...industries.slice(13)].map((industry, i) => {
+                const Icon = industry.icon;
+                return (
+                  <div
+                    key={i}
+                    className="w-[280px] sm:w-[320px] shrink-0 group/card relative bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden hover:border-brand-primary/50 transition-all duration-300 hover:shadow-[0_0_20px_rgba(37,99,235,0.15)] flex flex-col h-full cursor-pointer"
+                  >
+                    <div className={`relative h-40 sm:h-48 overflow-hidden bg-gradient-to-br ${industry.color} flex items-center justify-center`}>
+                      <div className="absolute inset-0 bg-black/20 mix-blend-overlay z-10 opacity-0 group-hover/card:opacity-100 transition-opacity duration-300" />
+                      <Icon className="w-20 h-20 text-white opacity-90 transform group-hover/card:scale-110 transition-transform duration-500 drop-shadow-xl" />
+                    </div>
+                    <div className="p-5 bg-white/5 backdrop-blur-md border-t border-white/5 flex-grow flex items-center justify-center">
+                      <h3 className="text-base sm:text-lg font-bold text-slate-200 text-center group-hover/card:text-white transition-colors">
+                        {industry.name}
+                      </h3>
+                    </div>
                   </div>
-                  <div className="p-5 bg-white/5 backdrop-blur-md border-t border-white/5 flex-grow flex items-center justify-center">
-                    <h3 className="text-base sm:text-lg font-bold text-slate-200 text-center group-hover/card:text-white transition-colors">
-                      {industry.name}
-                    </h3>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
