@@ -45,6 +45,7 @@ const crmTiers = [
     name: "Custom Website",
     price: "997",
     priceSuffix: " one-time",
+    isNew: true,
     features: [
       "Fully Customized Website — 10–20 Pages",
       "On-Site SEO",
@@ -56,6 +57,7 @@ const crmTiers = [
     name: "AI Voice Agent",
     price: "149",
     priceSuffix: "/month\n+$997 setup",
+    isNew: true,
     features: [
       "Customized AI Voice Agent",
       "24/7 Automated Call Handling",
@@ -96,8 +98,13 @@ export function Pricing() {
                     <Star className="w-3 h-3 mr-1 fill-current" /> Most Popular
                   </div>
                 )}
-                <div className="mb-6 mt-2">
+                <div className="mb-6 mt-2 flex items-center gap-3">
                   <h4 className="text-xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
+                  {tier.isNew && (
+                    <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
+                      NEW
+                    </span>
+                  )}
                 </div>
                 <div className="mb-8 flex items-baseline">
                   <span className="text-5xl font-extrabold text-slate-900 tracking-tighter">${tier.price}</span>

@@ -41,6 +41,7 @@ export function PricingPage() {
       ],
       popular: false,
       isOneTime: false,
+      isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
@@ -60,6 +61,7 @@ export function PricingPage() {
       ],
       popular: true,
       isOneTime: false,
+      isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
@@ -77,6 +79,7 @@ export function PricingPage() {
       ],
       popular: false,
       isOneTime: true,
+      isNew: true,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
@@ -94,6 +97,7 @@ export function PricingPage() {
       ],
       popular: false,
       isOneTime: true,
+      isNew: true,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     }
   ];
@@ -140,8 +144,13 @@ export function PricingPage() {
                 </div>
               )}
               
-              <div className="mb-4">
+              <div className="mb-4 flex items-center gap-3">
                 <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
+                {tier.isNew && (
+                  <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
+                    NEW
+                  </span>
+                )}
               </div>
               
               <div className="mb-8 min-h-[120px] flex flex-col justify-center">
