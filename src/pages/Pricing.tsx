@@ -29,8 +29,10 @@ export function PricingPage() {
     {
       name: "Starter",
       monthlyPrice: "$197",
+      priceSuffix: "/mo",
       annualOriginal: "$2,364",
       annualDiscounted: "$1,773",
+      annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
         "Automated Lead Follow-Up",
@@ -38,13 +40,16 @@ export function PricingPage() {
         "On-Site SEO"
       ],
       popular: false,
+      isOneTime: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
       name: "Advanced",
       monthlyPrice: "$297",
+      priceSuffix: "/mo",
       annualOriginal: "$3,564",
       annualDiscounted: "$2,673",
+      annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
         "Automated Lead Follow-Up",
@@ -54,6 +59,41 @@ export function PricingPage() {
         "On-Site SEO"
       ],
       popular: true,
+      isOneTime: false,
+      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
+    },
+    {
+      name: "Custom Website",
+      monthlyPrice: "$997",
+      priceSuffix: " one-time",
+      annualOriginal: "$997",
+      annualDiscounted: "$997",
+      annualSuffix: " one-time",
+      features: [
+        "Fully Customized Website — 10–20 Pages",
+        "On-Site SEO",
+        "Mobile Responsive Design",
+        "Fast Load Speeds"
+      ],
+      popular: false,
+      isOneTime: true,
+      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
+    },
+    {
+      name: "AI Voice Agent",
+      monthlyPrice: "$149",
+      priceSuffix: "/mo + $997 setup",
+      annualOriginal: "$1,788",
+      annualDiscounted: "$1,341",
+      annualSuffix: "/yr + $997 setup",
+      features: [
+        "Customized AI Voice Agent",
+        "24/7 Automated Call Handling",
+        "Lead Qualification & Booking",
+        "Seamless CRM Integration"
+      ],
+      popular: false,
+      isOneTime: true,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     }
   ];
@@ -105,10 +145,10 @@ export function PricingPage() {
               </div>
               
               <div className="mb-8 min-h-[120px] flex flex-col justify-center">
-                {!isAnnual ? (
+                {!isAnnual || tier.isOneTime ? (
                   <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-extrabold text-white tracking-tight">{tier.monthlyPrice}</span>
-                    <span className="text-slate-400 font-bold text-lg">/mo</span>
+                    <span className="text-slate-400 font-bold text-lg whitespace-pre-wrap">{tier.priceSuffix || "/mo"}</span>
                   </div>
                 ) : (
                   <div className="flex flex-col gap-2">
@@ -123,7 +163,7 @@ export function PricingPage() {
                       className="relative inline-flex items-baseline gap-2 w-fit"
                     >
                       <span className="text-5xl font-extrabold tracking-tight text-white">{tier.annualOriginal}</span>
-                      <span className="font-bold text-lg text-slate-400">/yr</span>
+                      <span className="font-bold text-lg text-slate-400 whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
                       
                       {/* Red Strikethrough Line */}
                       {annualPhase > 0 && (
@@ -145,7 +185,7 @@ export function PricingPage() {
                         >
                           <div className="flex items-baseline gap-1">
                              <span className="text-4xl font-extrabold text-white tracking-tight">{tier.annualDiscounted}</span>
-                             <span className="text-slate-400 font-bold text-base">/yr</span>
+                             <span className="text-slate-400 font-bold text-base whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
                           </div>
                           <span className="bg-brand-500/10 text-brand-400 font-bold px-3 py-1.5 rounded-md text-xs border border-brand-500/30 whitespace-nowrap self-start sm:self-auto">
                             3 months FREE

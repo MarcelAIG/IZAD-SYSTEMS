@@ -7,6 +7,7 @@ const crmTiers = [
   {
     name: "Starter Package",
     price: "197",
+    priceSuffix: "/month",
     features: [
       "New modern website",
       "Reputation & review management",
@@ -18,6 +19,7 @@ const crmTiers = [
   {
     name: "Professional Package",
     price: "297",
+    priceSuffix: "/month",
     popular: true,
     features: [
       "Everything in Starter",
@@ -31,11 +33,34 @@ const crmTiers = [
   {
     name: "Maximum Package",
     price: "497",
+    priceSuffix: "/month",
     features: [
       "Everything in Professional",
       "AI Voice Agent",
       "AI Website Chatbot",
       "3 Months SEO Optimization"
+    ]
+  },
+  {
+    name: "Custom Website",
+    price: "997",
+    priceSuffix: " one-time",
+    features: [
+      "Fully Customized Website — 10–20 Pages",
+      "On-Site SEO",
+      "Mobile Responsive Design",
+      "Fast Load Speeds"
+    ]
+  },
+  {
+    name: "AI Voice Agent",
+    price: "149",
+    priceSuffix: "/month\n+$997 setup",
+    features: [
+      "Customized AI Voice Agent",
+      "24/7 Automated Call Handling",
+      "Lead Qualification & Booking",
+      "Seamless CRM Integration"
     ]
   }
 ];
@@ -76,7 +101,7 @@ export function Pricing() {
                 </div>
                 <div className="mb-8 flex items-baseline">
                   <span className="text-5xl font-extrabold text-slate-900 tracking-tighter">${tier.price}</span>
-                  <span className="text-slate-500 font-bold text-lg ml-1">/month</span>
+                  <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
                 </div>
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, fIndex) => (
