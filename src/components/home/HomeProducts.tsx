@@ -804,16 +804,13 @@ export function HomeProducts() {
   return (
     <section className="py-24 relative z-10 bg-black/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+        <div 
           className="text-center mb-24"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white font-display mb-6 tracking-tight max-w-4xl mx-auto">
             Everything Your Business Needs to <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Capture More Customers</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="space-y-32 md:space-y-48">
           {products.map((product, index) => {
@@ -822,11 +819,7 @@ export function HomeProducts() {
               <div key={index} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                 
                 {/* Content Side */}
-                <motion.div 
-                  initial={{ opacity: 0, x: isEven ? 40 : -40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
+                <div 
                   className="w-full lg:w-1/2 flex flex-col items-start justify-center"
                 >
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-display mb-3 leading-tight">
@@ -854,19 +847,15 @@ export function HomeProducts() {
                   >
                     See How It Works
                   </Link>
-                </motion.div>
+                </div>
 
                 {/* Visual Side (Realistic Tailwind UI mockups) */}
-                <motion.div 
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
+                <div 
                   className="w-full lg:w-1/2 relative flex justify-center items-center"
                 >
                   <div className="absolute inset-0 bg-brand-500/10 blur-[100px] rounded-full opacity-50 pointer-events-none"></div>
                   {renderVisual(product.category)}
-                </motion.div>
+                </div>
 
               </div>
             );

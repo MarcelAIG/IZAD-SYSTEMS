@@ -21,9 +21,10 @@ export function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 font-display tracking-wide text-xl">Products</h4>
             <ul className="space-y-4">
-              <li><Link to="/products/starter" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Starter Package</Link></li>
-              <li><Link to="/products/professional" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Professional Package</Link></li>
-              <li><Link to="/products/maximum" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Maximum Package</Link></li>
+              <li><Link to="/pricing#starter" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Starter</Link></li>
+              <li><Link to="/pricing#advanced" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Advanced</Link></li>
+              <li><Link to="/pricing#custom-website" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">Custom Website</Link></li>
+              <li><Link to="/pricing#ai-voice-agent" className="text-slate-400 text-base font-medium hover:text-brand-500 transition-colors duration-200 block">AI Voice Agent</Link></li>
             </ul>
           </div>
 

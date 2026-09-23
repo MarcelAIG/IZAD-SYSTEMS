@@ -38,25 +38,18 @@ export function HomeWhyUs() {
   return (
     <section className="py-24 relative overflow-hidden bg-black/40 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+        <div 
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white font-display mb-6 tracking-tight max-w-4xl mx-auto">
             Less Software. Less Manual Work. <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">More Done.</span>
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {reasons.map((reason, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="bg-white/5 border border-white/10 hover:bg-white/10 rounded-2xl p-8 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
@@ -68,7 +61,7 @@ export function HomeWhyUs() {
               <p className="text-slate-400 text-lg leading-relaxed">
                 {reason.description}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

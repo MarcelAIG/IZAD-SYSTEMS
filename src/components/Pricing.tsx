@@ -11,6 +11,7 @@ const crmTiers = [
     features: [
       "New modern website",
       "Reputation & review management",
+      "Missed Call Text Back",
       "Mobile app access",
       "Website chat integration",
       "Full mobile optimization"
@@ -26,8 +27,8 @@ const crmTiers = [
       "Automatic review requests",
       "Missed Call Text Back",
       "Dedicated service pages",
-      "Monthly marketing messages",
-      "Google Business Profile updates"
+      "Google Business Profile updates",
+      "One-Click Marketing Campaigns"
     ]
   },
   {
@@ -56,7 +57,7 @@ const crmTiers = [
   {
     name: "AI Voice Agent",
     price: "149",
-    priceSuffix: "/month\n+$997 setup",
+    priceSuffix: "/month\n+€997 setup",
     isNew: true,
     features: [
       "Customized AI Voice Agent",
@@ -107,13 +108,13 @@ export function Pricing() {
                   )}
                 </div>
                 <div className="mb-8 flex items-baseline">
-                  <span className="text-5xl font-extrabold text-slate-900 tracking-tighter">${tier.price}</span>
+                  <span className="text-5xl font-extrabold text-slate-900 tracking-tighter">€{tier.price}</span>
                   <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
                 </div>
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
-                      <BrandCheck className="w-5 h-5 shrink-0 mr-3 mt-0.5" />
+                      <BrandCheck className={`w-5 h-5 shrink-0 mr-3 mt-0.5 ${feature === 'One-Click Marketing Campaigns' && tier.price === '297' ? 'text-yellow-400' : ''}`} />
                       <span className="text-slate-700 font-bold text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}

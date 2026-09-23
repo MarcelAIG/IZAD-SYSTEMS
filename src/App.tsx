@@ -2,7 +2,6 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { AIVoiceButton } from './components/AIVoiceButton';
 import { Home } from './pages/Home';
 import { WebsiteProductPage } from './pages/WebsiteProduct';
 import { MissedCallProductPage } from './pages/MissedCallProduct';
@@ -17,11 +16,20 @@ import { ContactPage } from './pages/Contact';
 import { Work } from './pages/Work';
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash.replace('#', ''));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
@@ -30,7 +38,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--color-bg-light)] text-black selection:bg-brand-500/30 selection:text-brand-900 flex flex-col relative overflow-x-hidden">
       <ScrollToTop />
-      <AIVoiceButton />
       
       {/* Deep, dark background with subtle atmospheric blue on left */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 bg-[radial-gradient(circle_at_top_left,_rgba(14,165,233,0.08),_transparent_50%)]"></div>

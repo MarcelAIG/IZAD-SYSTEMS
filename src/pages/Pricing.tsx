@@ -28,14 +28,16 @@ export function PricingPage() {
     const tiers = [
     {
       name: "Starter",
-      monthlyPrice: "$197",
+      monthlyPrice: "€197",
       priceSuffix: "/mo",
-      annualOriginal: "$2,364",
-      annualDiscounted: "$1,773",
+      annualPrice: "€1,773",
+      annualOriginal: "€2,364",
+      annualDiscounted: "€1,773",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
         "Automated Lead Follow-Up",
+        "Missed Call Text Back",
         "5-Star Review Funnel",
         "On-Site SEO"
       ],
@@ -46,18 +48,19 @@ export function PricingPage() {
     },
     {
       name: "Advanced",
-      monthlyPrice: "$297",
+      monthlyPrice: "€297",
       priceSuffix: "/mo",
-      annualOriginal: "$3,564",
-      annualDiscounted: "$2,673",
+      annualPrice: "€2,673",
+      annualOriginal: "€3,564",
+      annualDiscounted: "€2,673",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
         "Automated Lead Follow-Up",
         "Missed Call Text Back",
         "5-Star Review Funnel",
-        "One-Click Marketing Campaigns",
-        "On-Site SEO"
+        "On-Site SEO",
+        "One-Click Marketing Campaigns"
       ],
       popular: true,
       isOneTime: false,
@@ -66,10 +69,11 @@ export function PricingPage() {
     },
     {
       name: "Custom Website",
-      monthlyPrice: "$997",
+      monthlyPrice: "€997",
       priceSuffix: " one-time",
-      annualOriginal: "$997",
-      annualDiscounted: "$997",
+      annualPrice: "€997",
+      annualOriginal: "€997",
+      annualDiscounted: "€997",
       annualSuffix: " one-time",
       features: [
         "Fully Customized Website — 10–20 Pages",
@@ -84,11 +88,11 @@ export function PricingPage() {
     },
     {
       name: "AI Voice Agent",
-      monthlyPrice: "$149",
-      priceSuffix: "/mo + $997 setup",
-      annualOriginal: "$1,788",
-      annualDiscounted: "$1,341",
-      annualSuffix: "/yr + $997 setup",
+      monthlyPrice: "€149",
+      priceSuffix: "/mo + €997 setup",
+      annualOriginal: "€1,788",
+      annualDiscounted: "€1,341",
+      annualSuffix: "/yr + €997 setup",
       features: [
         "Customized AI Voice Agent",
         "24/7 Automated Call Handling",
@@ -104,9 +108,9 @@ export function PricingPage() {
 
   return (
     <div className="pt-24 pb-12 min-h-screen flex flex-col bg-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-12 relative z-10 w-full">
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-white mb-10 font-display">
-          Our pricing
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-12 mb-8 relative z-10 w-full">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight">
+          Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">Pricing</span>
         </h1>
         
         {/* Toggle */}
@@ -130,9 +134,10 @@ export function PricingPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
-            <div 
+              <div 
+              id={tier.name.toLowerCase().replace(/\s+/g, '-')}
               key={index}
-              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full ${
+              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${
                 tier.popular 
                   ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
                   : 'bg-[#111] border-brand-500/20'
@@ -209,7 +214,7 @@ export function PricingPage() {
               <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <BrandCheck className="w-5 h-5 mt-0.5 shrink-0 text-brand-500" />
+                    <BrandCheck className={`w-5 h-5 mt-0.5 shrink-0 ${feature === 'One-Click Marketing Campaigns' && tier.monthlyPrice === '€297' ? 'text-yellow-400' : 'text-brand-500'}`} />
                     <span className="text-slate-200 text-base font-medium">{feature}</span>
                   </li>
                 ))}

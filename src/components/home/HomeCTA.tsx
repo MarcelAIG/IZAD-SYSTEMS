@@ -10,18 +10,15 @@ export function HomeCTA() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(14,165,233,0.15),_transparent_60%)] pointer-events-none z-0"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(14,165,233,0.1),_transparent_40%)] pointer-events-none z-0"></div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
-          className="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl p-12 md:p-16 lg:p-20 shadow-2xl relative overflow-hidden group hover:border-brand-500/30 transition-all duration-500"
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div
+          className="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-2xl p-8 md:p-12 lg:p-16 lg:px-24 shadow-2xl relative overflow-hidden group hover:border-brand-500/30 transition-all duration-500"
         >
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-brand-500/20 blur-[80px] rounded-full pointer-events-none transition-all duration-700 group-hover:bg-brand-500/30"></div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white font-display mb-8 tracking-tight leading-tight">
-            Your Next Customer Might Already Be <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Looking for You.</span>
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-extrabold text-white font-display mb-8 tracking-tight leading-tight">
+            Your Next Customer Might Already Be <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-brand-600">Looking for You.</span>
           </h2>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
@@ -35,7 +32,7 @@ export function HomeCTA() {
               Book a Quick Demo
             </a>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
