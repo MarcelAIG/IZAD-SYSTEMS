@@ -13,7 +13,7 @@ export function CTA() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent"></div>
           
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tighter text-white mb-8 font-display whitespace-nowrap">
+            <h2 className="text-4xl md:text-5xl lg:text-[3.5rem] font-extrabold tracking-tighter text-white mb-8 font-display sm:whitespace-nowrap">
               Want more calls and booked jobs?
             </h2>
             <p className="text-xl text-slate-400 mb-12 max-w-2xl mx-auto">

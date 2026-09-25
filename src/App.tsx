@@ -15,6 +15,9 @@ import { PricingPage } from './pages/Pricing';
 import { ContactPage } from './pages/Contact';
 import { Work } from './pages/Work';
 
+import { PrivacyPage } from './pages/Privacy';
+import { TermsPage } from './pages/Terms';
+
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -62,6 +65,8 @@ export default function App() {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/work" element={<Work />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
       </main>
 

@@ -34,13 +34,13 @@ const FiveStars = () => (
 export function TrustedBy() {
   return (
     <div className="w-full pt-8">
-      <div className="flex flex-col md:flex-row items-center justify-start gap-8 md:gap-12">
+      <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-12">
         
         {/* Google */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <GoogleLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-lg md:text-xl font-display leading-none">Google</span>
+            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Google</span>
             <FiveStars />
           </div>
         </div>
@@ -49,10 +49,10 @@ export function TrustedBy() {
         <div className="hidden md:block w-px h-12 bg-white/10"></div>
 
         {/* Facebook */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <FacebookLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-lg md:text-xl font-display leading-none">Facebook</span>
+            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Facebook</span>
             <FiveStars />
           </div>
         </div>
@@ -61,10 +61,10 @@ export function TrustedBy() {
         <div className="hidden md:block w-px h-12 bg-white/10"></div>
 
         {/* Trustpilot */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <TrustpilotLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-lg md:text-xl font-display leading-none">Trustpilot</span>
+            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Trustpilot</span>
             <FiveStars />
           </div>
         </div>

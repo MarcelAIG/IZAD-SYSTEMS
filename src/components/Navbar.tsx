@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isProductsOpen, setIsProductsOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -21,7 +22,10 @@ export function Navbar() {
       className={`text-base font-bold tracking-wide transition-colors ${
         isActive(to) ? 'text-brand-500' : 'text-slate-400 hover:text-brand-500'
       }`}
-      onClick={() => setIsOpen(false)}
+      onClick={() => {
+        setIsOpen(false);
+        setIsProductsOpen(false);
+      }}
     >
       {children}
     </Link>
@@ -85,7 +89,13 @@ export function Navbar() {
             </div>
             
             <div className="md:hidden">
-              <button onClick={() => setIsOpen(!isOpen)} className="text-slate-400 hover:text-white p-2">
+              <button 
+                onClick={() => {
+                  setIsOpen(!isOpen);
+                  if (isOpen) setIsProductsOpen(false); // reset products state on close
+                }} 
+                className="text-slate-400 hover:text-white p-2"
+              >
                 {isOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
               </button>
             </div>
@@ -96,21 +106,30 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-3xl border-b border-white/10 absolute w-full shadow-xl">
+        <div className="md:hidden bg-black/95 backdrop-blur-3xl border-b border-white/10 absolute w-full shadow-xl h-screen overflow-y-auto pb-32">
           <div className="px-4 pt-4 pb-8 space-y-3">
             
             <div className="space-y-1 bg-white/5 rounded-md p-2 border border-white/5">
-              <div className={`block px-2 pt-2 pb-3 text-lg font-bold ${location.pathname.startsWith('/products') ? 'text-brand-500' : 'text-slate-300'}`}>Products</div>
-              <div className="space-y-1">
-                {productItems.map((item, idx) => (
-                  <Link key={idx} to={item.href} onClick={() => setIsOpen(false)} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
-                    <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
-                      <item.icon className="w-4 h-4" />
-                    </div>
-                    <span className="text-slate-200 font-bold text-base">{item.title}</span>
-                  </Link>
-                ))}
-              </div>
+              <button 
+                onClick={() => setIsProductsOpen(!isProductsOpen)}
+                className={`w-full flex items-center justify-between px-2 pt-2 pb-3 text-lg font-bold ${location.pathname.startsWith('/products') ? 'text-brand-500' : 'text-slate-300'}`}
+              >
+                <span>Products</span>
+                <ChevronDown className={`w-5 h-5 transition-transform ${isProductsOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isProductsOpen && (
+                <div className="space-y-1 mt-2">
+                  {productItems.map((item, idx) => (
+                    <Link key={idx} to={item.href} onClick={() => { setIsOpen(false); setIsProductsOpen(false); }} className="flex items-center gap-3 p-3 rounded-md hover:bg-white/5 transition-colors">
+                      <div className="w-8 h-8 rounded-md bg-brand-500/20 flex items-center justify-center shrink-0 text-brand-500">
+                        <item.icon className="w-4 h-4" />
+                      </div>
+                      <span className="text-slate-200 font-bold text-base">{item.title}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
 
             <Link to="/pricing" onClick={() => setIsOpen(false)} className={`block px-4 py-4 text-lg font-bold rounded-md ${isActive('/pricing') ? 'text-brand-500 bg-white/5' : 'text-slate-400 hover:text-brand-500 hover:bg-brand-500/10'}`}>Pricing</Link>
