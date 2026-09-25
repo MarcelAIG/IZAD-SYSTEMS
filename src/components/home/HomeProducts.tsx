@@ -816,7 +816,7 @@ export function HomeProducts() {
           {products.map((product, index) => {
             const isEven = index % 2 === 1; // Alternating layout
             return (
-              <div key={index} className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
+              <div key={index} className={`flex flex-col-reverse ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}>
                 
                 {/* Content Side */}
                 <div 

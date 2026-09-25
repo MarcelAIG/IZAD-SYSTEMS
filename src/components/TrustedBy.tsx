@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react';
 
 const GoogleLogo = () => (
-  <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
     <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
     <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -10,23 +10,23 @@ const GoogleLogo = () => (
 );
 
 const FacebookLogo = () => (
-  <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" fill="#1877F2" xmlns="http://www.w3.org/2000/svg">
     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
     <path d="M16.671 15.542l.532-3.469h-3.328v-2.25c0-.949.465-1.874 1.956-1.874h1.514V5.001s-1.374-.235-2.686-.235c-2.741 0-4.533 1.662-4.533 4.669v2.643H7.078v3.469h3.047v8.385a12.09 12.09 0 003.75 0v-8.385h2.796z" fill="white"/>
   </svg>
 );
 
 const TrustpilotLogo = () => (
-  <svg className="w-8 h-8 md:w-10 md:h-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <svg className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path d="M12 0l3.708 7.514 8.292 1.205-6 5.848 1.416 8.258L12 18.896l-7.416 3.929L6 14.567 0 8.719l8.292-1.205L12 0z" fill="#00B67A"/>
     <path d="M12 18.896V0l-3.708 7.514L0 8.719l6 5.848-1.416 8.258L12 18.896z" fill="#005128"/>
   </svg>
 );
 
 const FiveStars = () => (
-  <div className="flex gap-1 mt-1">
+  <div className="flex gap-0.5 sm:gap-1 mt-0.5 sm:mt-1">
     {[1, 2, 3, 4, 5].map((i) => (
-      <Star key={i} className="w-4 h-4 md:w-5 md:h-5 fill-[#FFB900] text-[#FFB900]" />
+      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-[#FFB900] text-[#FFB900]" />
     ))}
   </div>
 );
@@ -34,13 +34,13 @@ const FiveStars = () => (
 export function TrustedBy() {
   return (
     <div className="w-full pt-8">
-      <div className="flex flex-row flex-wrap items-center justify-center lg:justify-start gap-6 md:gap-12">
+      <div className="flex flex-row flex-nowrap items-center justify-between sm:justify-center lg:justify-start gap-2 sm:gap-6 md:gap-12">
         
         {/* Google */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
           <GoogleLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Google</span>
+            <span className="text-white font-bold text-[11px] sm:text-sm md:text-xl font-display leading-none">Google</span>
             <FiveStars />
           </div>
         </div>
@@ -49,10 +49,10 @@ export function TrustedBy() {
         <div className="hidden md:block w-px h-12 bg-white/10"></div>
 
         {/* Facebook */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
           <FacebookLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Facebook</span>
+            <span className="text-white font-bold text-[11px] sm:text-sm md:text-xl font-display leading-none">Facebook</span>
             <FiveStars />
           </div>
         </div>
@@ -61,10 +61,10 @@ export function TrustedBy() {
         <div className="hidden md:block w-px h-12 bg-white/10"></div>
 
         {/* Trustpilot */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:gap-4">
           <TrustpilotLogo />
           <div className="flex flex-col">
-            <span className="text-white font-bold text-sm md:text-xl font-display leading-none">Trustpilot</span>
+            <span className="text-white font-bold text-[11px] sm:text-sm md:text-xl font-display leading-none">Trustpilot</span>
             <FiveStars />
           </div>
         </div>

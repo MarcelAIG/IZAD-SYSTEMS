@@ -106,7 +106,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-3xl border-b border-white/10 absolute w-full shadow-xl h-screen overflow-y-auto pb-32">
+        <div className="md:hidden bg-[#050505] border-b border-white/10 absolute w-full shadow-xl h-screen overflow-y-auto pb-32">
           <div className="px-4 pt-4 pb-8 space-y-3">
             
             <div className="space-y-1 bg-white/5 rounded-md p-2 border border-white/5">

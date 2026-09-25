@@ -8,7 +8,7 @@ export function Hero() {
     <section className="relative pt-40 pb-20 lg:pt-52 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
       
       {/* Background Graphic */}
-      <div className="absolute top-[49%] -translate-y-1/2 right-0 translate-x-[53%] lg:translate-x-[36%] w-[800px] lg:w-[1200px] pointer-events-none z-0 hidden md:block opacity-30">
+      <div className="absolute top-0 right-0 translate-x-[40%] -translate-y-[20%] w-[600px] sm:w-[700px] md:top-[49%] md:-translate-y-1/2 md:right-0 md:translate-x-[53%] lg:translate-x-[36%] md:w-[800px] lg:w-[1200px] pointer-events-none z-0 opacity-30 md:opacity-30">
         <img 
           src="/hero-graphic.png" 
           alt="Hero decorative graphic" 
@@ -19,15 +19,15 @@ export function Hero() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex items-center">
 
 
-        <div className="text-left max-w-4xl flex flex-col items-start mt-8 relative z-10">
-          <h1 className="text-5xl md:text-[3.5rem] lg:text-[4.5rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
+        <div className="text-left max-w-4xl flex flex-col items-start mt-20 md:mt-8 relative z-10">
+          <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4.5rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
             Website Design & Marketing Systems for <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600 inline-block mt-2 lg:mt-0">
               Local Service Businesses
             </span>
           </h1>
           
-          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-12 w-full max-w-5xl">
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-3 md:mb-12 w-full max-w-5xl">
             <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium max-w-2xl">
               Local Service Businesses Trust Us To Transform Their Business With Marketing Systems, Website Design, Reputation Management And Automation.
             </p>

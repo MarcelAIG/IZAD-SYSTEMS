@@ -4,12 +4,12 @@ import { CTA } from '../components/CTA';
 export function ContactPage() {
   return (
     <div className="pt-32 pb-0 min-h-screen flex flex-col">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left sm:text-center mb-0 relative z-20">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white font-display mb-16 sm:mb-24 leading-tight">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-0 relative z-20">
+        <h1 className="text-center text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white font-display mb-16 sm:mb-24 leading-tight">
           Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">Touch</span>
         </h1>
         
-        <div className="flex flex-col items-start sm:items-center">
+        <div className="flex flex-col items-start sm:items-center text-left sm:text-center">
           <p className="text-zinc-300 text-lg md:text-2xl mb-4 whitespace-normal sm:whitespace-nowrap px-0 sm:px-2">
             Ready to scale your business? Let's discuss how WE can help.
           </p>
