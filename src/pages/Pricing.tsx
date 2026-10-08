@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Shield, Sparkles } from 'lucide-react';
 import { BrandCheck } from '../components/BrandCheck';
@@ -68,12 +68,12 @@ export function PricingPage() {
     },
     {
       name: "Custom Website",
-      monthlyPrice: "€997",
-      priceSuffix: " one-time",
-      annualPrice: "€997",
-      annualOriginal: "€997",
-      annualDiscounted: "€997",
-      annualSuffix: " one-time",
+      monthlyPrice: "€997 - €2997",
+      priceSuffix: " / One-Time",
+      annualPrice: "€997 - €2997",
+      annualOriginal: "€997 - €2997",
+      annualDiscounted: "€997 - €2997",
+      annualSuffix: " / One-Time",
       features: [
         "Fully Customized Website — 10–20 Pages",
         "On-Site SEO",
@@ -133,9 +133,14 @@ export function PricingPage() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 relative z-10 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
+            <Fragment key={index}>
+              {index === 2 && (
+                <div className="col-span-1 md:col-span-2 text-center mt-8 mb-2">
+                  <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white font-display mb-4">Other Services</h2>
+                </div>
+              )}
               <div 
               id={tier.name.toLowerCase().replace(/\s+/g, '-')}
-              key={index}
               className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${
                 tier.popular 
                   ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
@@ -160,7 +165,7 @@ export function PricingPage() {
               <div className="mb-8 min-h-[120px] flex flex-col justify-center">
                 {!isAnnual || tier.isOneTime ? (
                   <div className="flex items-baseline gap-2">
-                    <span className="text-5xl font-extrabold text-white tracking-tight">{tier.monthlyPrice}</span>
+                    <span className={`${tier.monthlyPrice?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-white tracking-tight`}>{tier.monthlyPrice}</span>
                     <span className="text-slate-400 font-bold text-lg whitespace-pre-wrap">{tier.priceSuffix || "/mo"}</span>
                   </div>
                 ) : (
@@ -175,7 +180,7 @@ export function PricingPage() {
                       transition={{ duration: 0.3 }}
                       className="relative inline-flex items-baseline gap-2 w-fit"
                     >
-                      <span className="text-5xl font-extrabold tracking-tight text-white">{tier.annualOriginal}</span>
+                      <span className={`${tier.annualOriginal?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold tracking-tight text-white`}>{tier.annualOriginal}</span>
                       <span className="font-bold text-lg text-slate-400 whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
                       
                       {/* Red Strikethrough Line */}
@@ -197,7 +202,7 @@ export function PricingPage() {
                           className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2"
                         >
                           <div className="flex items-baseline gap-1">
-                             <span className="text-4xl font-extrabold text-white tracking-tight">{tier.annualDiscounted}</span>
+                             <span className={`${tier.annualDiscounted?.length > 8 ? 'text-2xl sm:text-3xl' : 'text-4xl'} font-extrabold text-white tracking-tight`}>{tier.annualDiscounted}</span>
                              <span className="text-slate-400 font-bold text-base whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
                           </div>
                           <span className="bg-brand-500/10 text-brand-400 font-bold px-3 py-1.5 rounded-md text-xs border border-brand-500/30 whitespace-nowrap self-start sm:self-auto">
@@ -225,6 +230,7 @@ export function PricingPage() {
                 BOOK A CALL
               </a>
             </div>
+            </Fragment>
           ))}
         </div>
       </div>

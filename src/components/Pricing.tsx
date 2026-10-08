@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react';
 import { motion } from 'motion/react';
 import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -44,8 +45,8 @@ const crmTiers = [
   },
   {
     name: "Custom Website",
-    price: "997",
-    priceSuffix: " one-time",
+    price: "997 - €2997",
+    priceSuffix: " / One-Time",
     isNew: true,
     features: [
       "Fully Customized Website — 10–20 Pages",
@@ -86,8 +87,13 @@ export function Pricing() {
           <h3 className="text-2xl font-bold text-slate-900 mb-10 text-center font-display">Monthly Software & Hosting</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {crmTiers.map((tier, index) => (
+              <Fragment key={index}>
+                {index === 3 && (
+                  <div className="col-span-1 md:col-span-3 text-center mt-12 mb-2">
+                    <h3 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-4 font-display">Other Services</h3>
+                  </div>
+                )}
               <motion.div
-                key={index}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
@@ -108,7 +114,7 @@ export function Pricing() {
                   )}
                 </div>
                 <div className="mb-8 flex items-baseline">
-                  <span className="text-5xl font-extrabold text-slate-900 tracking-tighter">€{tier.price}</span>
+                  <span className={`${tier.price?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-slate-900 tracking-tighter`}>€{tier.price}</span>
                   <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
                 </div>
                 <ul className="space-y-4 mb-8 flex-1">
@@ -123,6 +129,7 @@ export function Pricing() {
                   Get Started
                 </Link>
               </motion.div>
+              </Fragment>
             ))}
           </div>
         </div>
