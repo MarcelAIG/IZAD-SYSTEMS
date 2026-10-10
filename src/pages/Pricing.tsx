@@ -68,11 +68,11 @@ export function PricingPage() {
     },
     {
       name: "Custom Website",
-      monthlyPrice: "€997 - €2997",
+      monthlyPrice: "€500 - €3000",
       priceSuffix: " / One-Time",
-      annualPrice: "€997 - €2997",
-      annualOriginal: "€997 - €2997",
-      annualDiscounted: "€997 - €2997",
+      annualPrice: "€500 - €3000",
+      annualOriginal: "€500 - €3000",
+      annualDiscounted: "€500 - €3000",
       annualSuffix: " / One-Time",
       features: [
         "Fully Customized Website — 10–20 Pages",

@@ -45,7 +45,7 @@ const crmTiers = [
   },
   {
     name: "Custom Website",
-    price: "997 - €2997",
+    price: "500 - €3000",
     priceSuffix: " / One-Time",
     isNew: true,
     features: [
