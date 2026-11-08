@@ -28,11 +28,11 @@ export function PricingPage() {
     const tiers = [
     {
       name: "Starter",
-      monthlyPrice: "€197",
+      monthlyPrice: "€149",
       priceSuffix: "/mo",
-      annualPrice: "€1,773",
-      annualOriginal: "€2,364",
-      annualDiscounted: "€1,773",
+      annualPrice: "€1,341",
+      annualOriginal: "€1,788",
+      annualDiscounted: "€1,341",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
@@ -47,11 +47,11 @@ export function PricingPage() {
     },
     {
       name: "Advanced",
-      monthlyPrice: "€297",
+      monthlyPrice: "€249",
       priceSuffix: "/mo",
-      annualPrice: "€2,673",
-      annualOriginal: "€3,564",
-      annualDiscounted: "€2,673",
+      annualPrice: "€2,241",
+      annualOriginal: "€2,988",
+      annualDiscounted: "€2,241",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",

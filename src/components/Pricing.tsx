@@ -7,7 +7,7 @@ import { BrandCheck } from './BrandCheck';
 const crmTiers = [
   {
     name: "Starter Package",
-    price: "197",
+    price: "149",
     priceSuffix: "/month",
     features: [
       "New modern website",
@@ -20,7 +20,7 @@ const crmTiers = [
   },
   {
     name: "Professional Package",
-    price: "297",
+    price: "249",
     priceSuffix: "/month",
     popular: true,
     features: [
