@@ -201,7 +201,7 @@ export function PricingPage() {
               <ul className="space-y-3 mb-8 flex-grow">
                 {tier.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <BrandCheck className={`w-5 h-5 mt-0.5 shrink-0 ${(feature === 'One-Click Marketing Campaigns' || feature === 'Missed Call Text Back') && tier.monthlyPrice === '€297' ? 'text-yellow-400' : 'text-brand-500'}`} />
+                    <BrandCheck className="w-5 h-5 mt-0.5 shrink-0 text-brand-500" />
                     <span className="text-slate-200 text-base font-medium">{feature}</span>
                   </li>
                 ))}

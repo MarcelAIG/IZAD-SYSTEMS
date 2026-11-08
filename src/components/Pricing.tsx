@@ -108,7 +108,7 @@ export function Pricing() {
                 <ul className="space-y-4 mb-8 flex-1">
                   {tier.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start">
-                      <BrandCheck className={`w-5 h-5 shrink-0 mr-3 mt-0.5 ${feature === 'One-Click Marketing Campaigns' && tier.price === '297' ? 'text-yellow-400' : ''}`} />
+                      <BrandCheck className="w-5 h-5 shrink-0 mr-3 mt-0.5" />
                       <span className="text-slate-700 font-bold text-sm leading-relaxed">{feature}</span>
                     </li>
                   ))}
