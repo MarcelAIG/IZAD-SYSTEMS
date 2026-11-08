@@ -67,10 +67,10 @@ export function PricingPage() {
     },
     {
       name: "AI Voice Agent",
-      monthlyPrice: "€149",
+      monthlyPrice: "€97",
       priceSuffix: "/mo + €997 setup",
-      annualOriginal: "€1,788",
-      annualDiscounted: "€1,341",
+      annualOriginal: "€1,164",
+      annualDiscounted: "€873",
       annualSuffix: "/yr + €997 setup",
       features: [
         "Customized AI Voice Agent",

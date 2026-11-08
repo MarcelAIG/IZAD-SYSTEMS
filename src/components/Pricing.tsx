@@ -44,7 +44,7 @@ const crmTiers = [
   },
   {
     name: "AI Voice Agent",
-    price: "149",
+    price: "97",
     priceSuffix: "/month\n+€997 setup",
     isNew: true,
     features: [
