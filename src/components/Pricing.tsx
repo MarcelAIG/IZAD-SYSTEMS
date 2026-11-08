@@ -28,8 +28,7 @@ const crmTiers = [
       "Automatic review requests",
       "Missed Call Text Back",
       "Dedicated service pages",
-      "Google Business Profile updates",
-      "One-Click Marketing Campaigns"
+      "Google Business Profile updates"
     ]
   },
   {

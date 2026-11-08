@@ -58,8 +58,7 @@ export function PricingPage() {
         "Automated Lead Follow-Up",
         "5-Star Review Funnel",
         "On-Site SEO",
-        "Missed Call Text Back",
-        "One-Click Marketing Campaigns"
+        "Missed Call Text Back"
       ],
       popular: true,
       isOneTime: false,
