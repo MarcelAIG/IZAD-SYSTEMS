@@ -67,25 +67,6 @@ export function PricingPage() {
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
     {
-      name: "Custom Website",
-      monthlyPrice: "€500 - €3000",
-      priceSuffix: " / One-Time",
-      annualPrice: "€500 - €3000",
-      annualOriginal: "€500 - €3000",
-      annualDiscounted: "€500 - €3000",
-      annualSuffix: " / One-Time",
-      features: [
-        "Fully Customized Website — 10–20 Pages",
-        "On-Site SEO",
-        "Mobile Responsive Design",
-        "Fast Load Speeds"
-      ],
-      popular: false,
-      isOneTime: true,
-      isNew: true,
-      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
-    },
-    {
       name: "AI Voice Agent",
       monthlyPrice: "€149",
       priceSuffix: "/mo + €997 setup",
@@ -142,6 +123,8 @@ export function PricingPage() {
               <div 
               id={tier.name.toLowerCase().replace(/\s+/g, '-')}
               className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${
+                index === 2 ? 'md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ' : ''
+              }${
                 tier.popular 
                   ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
                   : 'bg-[#111] border-brand-500/20'

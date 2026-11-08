@@ -44,18 +44,6 @@ const crmTiers = [
     ]
   },
   {
-    name: "Custom Website",
-    price: "500 - €3000",
-    priceSuffix: " / One-Time",
-    isNew: true,
-    features: [
-      "Fully Customized Website — 10–20 Pages",
-      "On-Site SEO",
-      "Mobile Responsive Design",
-      "Fast Load Speeds"
-    ]
-  },
-  {
     name: "AI Voice Agent",
     price: "149",
     priceSuffix: "/month\n+€997 setup",
@@ -98,7 +86,7 @@ export function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
+                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 3 ? 'md:col-start-2 ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
