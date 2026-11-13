@@ -15,16 +15,13 @@ interface CrmTier {
 
 const crmTiers: CrmTier[] = [
   {
-    name: "",
+    name: "Marketing System",
     price: "97",
     priceSuffix: "/month",
     features: [
-      "New modern website",
-      "Reputation & review management",
-      "Missed Call Text Back",
-      "Mobile app access",
-      "Website chat integration",
-      "Full mobile optimization"
+      "Automated lead follow-up",
+      "5-Star review funnel",
+      "Auto Call Text Back"
     ]
   },
   /* Advanced tier temporarily removed:
@@ -43,14 +40,16 @@ const crmTiers: CrmTier[] = [
   },
   */
   {
-    name: "Maximum Package",
-    price: "497",
-    priceSuffix: "/month",
+    name: "Functional Website",
+    price: "500",
+    priceSuffix: " / One-Time",
+    isNew: false,
     features: [
-      "Everything in Professional",
-      "AI Voice Agent",
-      "AI Website Chatbot",
-      "3 Months SEO Optimization"
+      "Functional Website",
+      "On-Site SEO",
+      "Instagram + Facebook Integration",
+      "WhatsApp Integration",
+      "Google Page Integrated"
     ]
   },
   {
@@ -71,7 +70,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="py-32 relative z-10 border-t border-slate-200 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6 font-display">
             Here is <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">What It Costs</span>
@@ -91,44 +90,44 @@ export function Pricing() {
                     <h3 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-4 font-display">Other Services</h3>
                   </div>
                 )}
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
-                    <Star className="w-3 h-3 mr-1 fill-current" /> Most Popular
-                  </div>
-                )}
-                {tier.name && (
-                  <div className="mb-6 mt-2 flex items-center gap-3">
-                    <h4 className="text-xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
+                  className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
+                >
+                  {tier.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
+                      <Star className="w-3 h-3 mr-1 fill-current" /> Most Popular
+                    </div>
+                  )}
+                  <div className="mb-6 mt-2 min-h-[32px] flex items-center gap-3">
+                    {tier.name && (
+                      <h4 className="text-xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
+                    )}
                     {tier.isNew && (
                       <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
                         NEW
                       </span>
                     )}
                   </div>
-                )}
-                <div className="mb-8 flex items-baseline">
-                  <span className={`${tier.price?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-slate-900 tracking-tighter`}>€{tier.price}</span>
-                  <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
-                </div>
-                <ul className="space-y-4 mb-8 flex-1">
-                  {tier.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="flex items-start">
-                      <BrandCheck className="w-5 h-5 shrink-0 mr-3 mt-0.5" />
-                      <span className="text-slate-700 font-bold text-sm leading-relaxed">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link to="/contact" className={`w-full py-3 rounded-md text-center font-bold text-base transition-all mt-auto ${tier.popular ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md' : 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'}`}>
-                  Get Started
-                </Link>
-              </motion.div>
+                  <div className="mb-8 flex items-baseline">
+                    <span className={`${tier.price?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-slate-900 tracking-tighter`}>€{tier.price}</span>
+                    <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-1">
+                    {tier.features.map((feature, fIndex) => (
+                      <li key={fIndex} className="flex items-start">
+                        <BrandCheck className="w-5 h-5 shrink-0 mr-3 mt-0.5" />
+                        <span className="text-slate-700 font-bold text-sm leading-relaxed">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to="/contact" className={`w-full py-3 rounded-md text-center font-bold text-base transition-all mt-auto ${tier.popular ? 'bg-slate-900 text-white hover:bg-slate-800 shadow-md' : 'bg-white text-slate-900 hover:bg-slate-50 border border-slate-200 shadow-sm'}`}>
+                    Get Started
+                  </Link>
+                </motion.div>
               </Fragment>
             ))}
           </div>

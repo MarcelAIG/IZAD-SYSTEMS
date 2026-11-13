@@ -25,9 +25,9 @@ export function PricingPage() {
     }
   }, [isAnnual]);
 
-    const tiers = [
+  const tiers = [
     {
-      name: "",
+      name: "Marketing System",
       monthlyPrice: "€97",
       priceSuffix: "/mo",
       annualPrice: "€873",
@@ -35,10 +35,9 @@ export function PricingPage() {
       annualDiscounted: "€873",
       annualSuffix: "/yr",
       features: [
-        "Functional Website — 10–20 Pages",
         "Automated Lead Follow-Up",
         "5-Star Review Funnel",
-        "On-Site SEO"
+        "Auto Call Text Back"
       ],
       popular: false,
       isOneTime: false,
@@ -68,6 +67,26 @@ export function PricingPage() {
     },
     */
     {
+      name: "Functional Website",
+      monthlyPrice: "€500",
+      priceSuffix: " / One-Time",
+      annualPrice: "€500",
+      annualOriginal: "€500",
+      annualDiscounted: "€500",
+      annualSuffix: " / One-Time",
+      features: [
+        "Functional Website",
+        "On-Site SEO",
+        "Instagram + Facebook Integration",
+        "WhatsApp Integration",
+        "Google Page Integrated"
+      ],
+      popular: false,
+      isOneTime: true,
+      isNew: false,
+      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
+    },
+    {
       name: "AI Voice Agent",
       monthlyPrice: "€59",
       priceSuffix: "/mo + €997 setup fee",
@@ -93,15 +112,15 @@ export function PricingPage() {
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight">
           Our <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">Pricing</span>
         </h1>
-        
+
         {/* Toggle */}
         <div className="flex justify-center items-center gap-4 mb-4">
           <span className={`text-lg font-medium transition-colors ${!isAnnual ? 'text-white' : 'text-slate-500'}`}>Monthly</span>
-          <button 
+          <button
             onClick={() => setIsAnnual(!isAnnual)}
             className={`w-16 h-8 border rounded-full p-1 relative flex items-center shadow-inner transition-colors duration-300 ${isAnnual ? 'bg-brand-500 border-brand-500' : 'bg-[#222] border-[#333]'}`}
           >
-            <motion.div 
+            <motion.div
               layout
               className={`w-6 h-6 rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] ${isAnnual ? 'bg-white' : 'bg-brand-500'}`}
               animate={{ x: isAnnual ? 32 : 0 }}
@@ -116,109 +135,109 @@ export function PricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
             <Fragment key={index}>
-              {index === 1 && (
+              {index === 2 && (
                 <div className="col-span-1 md:col-span-2 text-center mt-8 mb-2">
                   <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white font-display mb-4">Other Services</h2>
                 </div>
               )}
-              <div 
-              id={tier.name ? tier.name.toLowerCase().replace(/\s+/g, '-') : 'package'}
-              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ${
-                tier.popular 
-                  ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
-                  : 'bg-[#111] border-brand-500/20'
-              }`}
-            >
-              {tier.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
-                  MOST POPULAR
-                </div>
-              )}
-              
-              {tier.name && (
-                <div className="mb-4 flex items-center gap-3">
-                  <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
+              <div
+                id={tier.name ? tier.name.toLowerCase().replace(/\s+/g, '-') : 'package'}
+                className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${index === 2 ? 'md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ' : ''
+                  }${tier.popular
+                    ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]'
+                    : 'bg-[#111] border-brand-500/20'
+                  }`}
+              >
+                {tier.popular && (
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
+                    MOST POPULAR
+                  </div>
+                )}
+
+                <div className="mb-4 min-h-[40px] flex items-center gap-3">
+                  {tier.name && (
+                    <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
+                  )}
                   {tier.isNew && (
                     <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
                       NEW
                     </span>
                   )}
                 </div>
-              )}
-              
-              <div className="mb-8 min-h-[120px] flex flex-col justify-center">
-                {!isAnnual || tier.isOneTime ? (
-                  <div className="flex items-baseline gap-2">
-                    <span className={`${tier.monthlyPrice?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-white tracking-tight`}>{tier.monthlyPrice}</span>
-                    <span className="text-slate-400 font-bold text-lg whitespace-pre-wrap">{tier.priceSuffix || "/mo"}</span>
-                  </div>
-                ) : (
-                  <div className="flex flex-col gap-2">
-                    <motion.div 
-                      animate={{ 
-                        scale: annualPhase > 0 ? 0.65 : 1,
-                        opacity: annualPhase > 0 ? 0.5 : 1,
-                        originX: 0,
-                        originY: 0.5
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="relative inline-flex items-baseline gap-2 w-fit"
-                    >
-                      <span className={`${tier.annualOriginal?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold tracking-tight text-white`}>{tier.annualOriginal}</span>
-                      <span className="font-bold text-lg text-slate-400 whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
-                      
-                      {/* Red Strikethrough Line */}
-                      {annualPhase > 0 && (
-                        <motion.div 
-                          initial={{ scaleX: 0 }}
-                          animate={{ scaleX: 1 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
-                          className="absolute left-0 top-1/2 w-full h-1.5 bg-red-600 origin-left -translate-y-1/2 rounded-full"
-                        />
-                      )}
-                    </motion.div>
-                    
-                    <AnimatePresence>
-                      {annualPhase === 2 && (
-                        <motion.div 
-                          initial={{ opacity: 0, y: -20, height: 0 }}
-                          animate={{ opacity: 1, y: 0, height: 'auto' }}
-                          className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2"
-                        >
-                          <div className="flex items-baseline gap-1">
-                             <span className={`${tier.annualDiscounted?.length > 8 ? 'text-2xl sm:text-3xl' : 'text-4xl'} font-extrabold text-white tracking-tight`}>{tier.annualDiscounted}</span>
-                             <span className="text-slate-400 font-bold text-base whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
-                          </div>
-                          <span className="bg-brand-500/10 text-brand-400 font-bold px-3 py-1.5 rounded-md text-xs border border-brand-500/30 whitespace-nowrap self-start sm:self-auto">
-                            3 months FREE
-                          </span>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                )}
+
+                <div className="mb-8 min-h-[120px] flex flex-col justify-center">
+                  {!isAnnual || tier.isOneTime ? (
+                    <div className="flex items-baseline gap-2">
+                      <span className={`${tier.monthlyPrice?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-white tracking-tight`}>{tier.monthlyPrice}</span>
+                      <span className="text-slate-400 font-bold text-lg whitespace-pre-wrap">{tier.priceSuffix || "/mo"}</span>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <motion.div
+                        animate={{
+                          scale: annualPhase > 0 ? 0.65 : 1,
+                          opacity: annualPhase > 0 ? 0.5 : 1,
+                          originX: 0,
+                          originY: 0.5
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="relative inline-flex items-baseline gap-2 w-fit"
+                      >
+                        <span className={`${tier.annualOriginal?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold tracking-tight text-white`}>{tier.annualOriginal}</span>
+                        <span className="font-bold text-lg text-slate-400 whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
+
+                        {/* Red Strikethrough Line */}
+                        {annualPhase > 0 && (
+                          <motion.div
+                            initial={{ scaleX: 0 }}
+                            animate={{ scaleX: 1 }}
+                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                            className="absolute left-0 top-1/2 w-full h-1.5 bg-red-600 origin-left -translate-y-1/2 rounded-full"
+                          />
+                        )}
+                      </motion.div>
+
+                      <AnimatePresence>
+                        {annualPhase === 2 && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -20, height: 0 }}
+                            animate={{ opacity: 1, y: 0, height: 'auto' }}
+                            className="flex flex-col sm:flex-row sm:items-center gap-3 pt-2"
+                          >
+                            <div className="flex items-baseline gap-1">
+                              <span className={`${tier.annualDiscounted?.length > 8 ? 'text-2xl sm:text-3xl' : 'text-4xl'} font-extrabold text-white tracking-tight`}>{tier.annualDiscounted}</span>
+                              <span className="text-slate-400 font-bold text-base whitespace-pre-wrap">{tier.annualSuffix || "/yr"}</span>
+                            </div>
+                            <span className="bg-brand-500/10 text-brand-400 font-bold px-3 py-1.5 rounded-md text-xs border border-brand-500/30 whitespace-nowrap self-start sm:self-auto">
+                              3 months FREE
+                            </span>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  )}
+                </div>
+
+                <ul className="space-y-3 mb-8 flex-grow">
+                  {tier.features.map((feature, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <BrandCheck className="w-5 h-5 mt-0.5 shrink-0 text-brand-500" />
+                      <span className="text-slate-200 text-base font-medium">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer"
+                  className={`w-full py-3 rounded-md font-extrabold flex items-center justify-center text-base uppercase tracking-wide mt-auto ${tier.buttonStyles}`}
+                >
+                  BOOK A CALL
+                </a>
               </div>
-              
-              <ul className="space-y-3 mb-8 flex-grow">
-                {tier.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    <BrandCheck className="w-5 h-5 mt-0.5 shrink-0 text-brand-500" />
-                    <span className="text-slate-200 text-base font-medium">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" 
-                className={`w-full py-3 rounded-md font-extrabold flex items-center justify-center text-base uppercase tracking-wide mt-auto ${tier.buttonStyles}`}
-              >
-                BOOK A CALL
-              </a>
-            </div>
             </Fragment>
           ))}
         </div>
       </div>
-      
+
       <CTA />
     </div>
   );
