@@ -4,10 +4,19 @@ import { Star } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BrandCheck } from './BrandCheck';
 
-const crmTiers = [
+interface CrmTier {
+  name: string;
+  price: string;
+  priceSuffix: string;
+  features: string[];
+  popular?: boolean;
+  isNew?: boolean;
+}
+
+const crmTiers: CrmTier[] = [
   {
-    name: "Starter Package",
-    price: "89",
+    name: "",
+    price: "97",
     priceSuffix: "/month",
     features: [
       "New modern website",
@@ -18,6 +27,7 @@ const crmTiers = [
       "Full mobile optimization"
     ]
   },
+  /* Advanced tier temporarily removed:
   {
     name: "Professional Package",
     price: "149",
@@ -31,6 +41,7 @@ const crmTiers = [
       "Google Business Profile updates"
     ]
   },
+  */
   {
     name: "Maximum Package",
     price: "497",
@@ -72,11 +83,11 @@ export function Pricing() {
 
         <div className="mb-20">
           <h3 className="text-2xl font-bold text-slate-900 mb-10 text-center font-display">Monthly Software & Hosting</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {crmTiers.map((tier, index) => (
               <Fragment key={index}>
-                {index === 3 && (
-                  <div className="col-span-1 md:col-span-3 text-center mt-12 mb-2">
+                {index === 2 && (
+                  <div className="col-span-1 md:col-span-2 text-center mt-12 mb-2">
                     <h3 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-4 font-display">Other Services</h3>
                   </div>
                 )}
@@ -85,21 +96,23 @@ export function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 3 ? 'md:col-start-2 ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
+                className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
                     <Star className="w-3 h-3 mr-1 fill-current" /> Most Popular
                   </div>
                 )}
-                <div className="mb-6 mt-2 flex items-center gap-3">
-                  <h4 className="text-xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
-                  {tier.isNew && (
-                    <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
-                      NEW
-                    </span>
-                  )}
-                </div>
+                {tier.name && (
+                  <div className="mb-6 mt-2 flex items-center gap-3">
+                    <h4 className="text-xl font-bold text-slate-900 mb-2 font-display">{tier.name}</h4>
+                    {tier.isNew && (
+                      <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
+                        NEW
+                      </span>
+                    )}
+                  </div>
+                )}
                 <div className="mb-8 flex items-baseline">
                   <span className={`${tier.price?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-slate-900 tracking-tighter`}>€{tier.price}</span>
                   <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>

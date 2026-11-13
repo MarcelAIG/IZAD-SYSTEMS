@@ -27,12 +27,12 @@ export function PricingPage() {
 
     const tiers = [
     {
-      name: "Starter",
-      monthlyPrice: "€89",
+      name: "",
+      monthlyPrice: "€97",
       priceSuffix: "/mo",
-      annualPrice: "€801",
-      annualOriginal: "€1,068",
-      annualDiscounted: "€801",
+      annualPrice: "€873",
+      annualOriginal: "€1,164",
+      annualDiscounted: "€873",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
@@ -45,6 +45,7 @@ export function PricingPage() {
       isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
+    /* Advanced tier temporarily removed:
     {
       name: "Advanced",
       monthlyPrice: "€149",
@@ -65,6 +66,7 @@ export function PricingPage() {
       isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
+    */
     {
       name: "AI Voice Agent",
       monthlyPrice: "€59",
@@ -114,16 +116,14 @@ export function PricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
             <Fragment key={index}>
-              {index === 2 && (
+              {index === 1 && (
                 <div className="col-span-1 md:col-span-2 text-center mt-8 mb-2">
                   <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white font-display mb-4">Other Services</h2>
                 </div>
               )}
               <div 
-              id={tier.name.toLowerCase().replace(/\s+/g, '-')}
-              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${
-                index === 2 ? 'md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ' : ''
-              }${
+              id={tier.name ? tier.name.toLowerCase().replace(/\s+/g, '-') : 'package'}
+              className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ${
                 tier.popular 
                   ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]' 
                   : 'bg-[#111] border-brand-500/20'
@@ -135,14 +135,16 @@ export function PricingPage() {
                 </div>
               )}
               
-              <div className="mb-4 flex items-center gap-3">
-                <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
-                {tier.isNew && (
-                  <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
-                    NEW
-                  </span>
-                )}
-              </div>
+              {tier.name && (
+                <div className="mb-4 flex items-center gap-3">
+                  <h3 className="text-2xl font-bold text-white mb-2 font-display">{tier.name}</h3>
+                  {tier.isNew && (
+                    <span className="bg-yellow-400 text-black text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider mb-2 shadow-[0_0_10px_rgba(250,204,21,0.3)]">
+                      NEW
+                    </span>
+                  )}
+                </div>
+              )}
               
               <div className="mb-8 min-h-[120px] flex flex-col justify-center">
                 {!isAnnual || tier.isOneTime ? (
