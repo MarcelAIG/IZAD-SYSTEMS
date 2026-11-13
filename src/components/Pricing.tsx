@@ -7,7 +7,7 @@ import { BrandCheck } from './BrandCheck';
 const crmTiers = [
   {
     name: "Starter Package",
-    price: "149",
+    price: "89",
     priceSuffix: "/month",
     features: [
       "New modern website",
@@ -20,7 +20,7 @@ const crmTiers = [
   },
   {
     name: "Professional Package",
-    price: "249",
+    price: "149",
     priceSuffix: "/month",
     popular: true,
     features: [
@@ -44,8 +44,8 @@ const crmTiers = [
   },
   {
     name: "AI Voice Agent",
-    price: "97",
-    priceSuffix: "/month\n+€997 setup",
+    price: "59",
+    priceSuffix: "/month\n+€997 setup fee",
     isNew: true,
     features: [
       "Customized AI Voice Agent",

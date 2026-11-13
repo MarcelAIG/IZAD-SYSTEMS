@@ -8,7 +8,7 @@ const products: Record<string, any> = {
   starter: {
     title: "Starter Package",
     subtitle: "Essential foundation for growth.",
-    price: "€149",
+    price: "€89",
     description: [
       "New modern website & Full mobile optimization",
       "Reputation & review management system",
@@ -20,7 +20,7 @@ const products: Record<string, any> = {
   professional: {
     title: "Professional Package",
     subtitle: "Everything in Starter + Automation.",
-    price: "€249",
+    price: "€149",
     description: [
       "Everything in the Starter Package",
       "Reputation management + on-site review form",

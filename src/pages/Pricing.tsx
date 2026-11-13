@@ -28,11 +28,11 @@ export function PricingPage() {
     const tiers = [
     {
       name: "Starter",
-      monthlyPrice: "€149",
+      monthlyPrice: "€89",
       priceSuffix: "/mo",
-      annualPrice: "€1,341",
-      annualOriginal: "€1,788",
-      annualDiscounted: "€1,341",
+      annualPrice: "€801",
+      annualOriginal: "€1,068",
+      annualDiscounted: "€801",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
@@ -47,11 +47,11 @@ export function PricingPage() {
     },
     {
       name: "Advanced",
-      monthlyPrice: "€249",
+      monthlyPrice: "€149",
       priceSuffix: "/mo",
-      annualPrice: "€2,241",
-      annualOriginal: "€2,988",
-      annualDiscounted: "€2,241",
+      annualPrice: "€1,341",
+      annualOriginal: "€1,788",
+      annualDiscounted: "€1,341",
       annualSuffix: "/yr",
       features: [
         "Functional Website — 10–20 Pages",
@@ -67,11 +67,11 @@ export function PricingPage() {
     },
     {
       name: "AI Voice Agent",
-      monthlyPrice: "€97",
-      priceSuffix: "/mo + €997 setup",
-      annualOriginal: "€1,164",
-      annualDiscounted: "€873",
-      annualSuffix: "/yr + €997 setup",
+      monthlyPrice: "€59",
+      priceSuffix: "/mo + €997 setup fee",
+      annualOriginal: "€708",
+      annualDiscounted: "€531",
+      annualSuffix: "/yr + €997 setup fee",
       features: [
         "Customized AI Voice Agent",
         "24/7 Automated Call Handling",
