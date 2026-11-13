@@ -7,7 +7,9 @@ export function Work() {
     '/our-work/work-img-2.png',
     '/our-work/work-img-3.png',
     '/our-work/work-img-4.png',
-    '/our-work/work-img-5.png'
+    '/our-work/work-img-5.png',
+    '/our-work/work-img-6.png',
+    '/our-work/work-img-7.png'
   ];
 
   return (
