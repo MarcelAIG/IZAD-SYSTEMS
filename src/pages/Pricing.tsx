@@ -27,7 +27,7 @@ export function PricingPage() {
 
   const tiers = [
     {
-      name: "Marketing System",
+      name: "Reputation System",
       monthlyPrice: "€97",
       priceSuffix: "/mo",
       annualPrice: "€873",
@@ -35,37 +35,32 @@ export function PricingPage() {
       annualDiscounted: "€873",
       annualSuffix: "/yr",
       features: [
-        "Automated Lead Follow-Up",
         "5-Star Review Funnel",
-        "Auto Call Text Back"
+        "Automated Review Request"
       ],
       popular: false,
       isOneTime: false,
       isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
-    /* Advanced tier temporarily removed:
     {
-      name: "Advanced",
-      monthlyPrice: "€149",
+      name: "Marketing System",
+      monthlyPrice: "€197",
       priceSuffix: "/mo",
-      annualPrice: "€1,341",
-      annualOriginal: "€1,788",
-      annualDiscounted: "€1,341",
+      annualPrice: "€1,773",
+      annualOriginal: "€2,364",
+      annualDiscounted: "€1,773",
       annualSuffix: "/yr",
       features: [
-        "Functional Website — 10–20 Pages",
-        "Automated Lead Follow-Up",
-        "5-Star Review Funnel",
-        "On-Site SEO",
-        "Missed Call Text Back"
+        "Reputation System",
+        "Auto Call Text Back",
+        "Automated Lead Follow-Up"
       ],
-      popular: true,
+      popular: false,
       isOneTime: false,
       isNew: false,
       buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
     },
-    */
     {
       name: "Functional Website",
       monthlyPrice: "€500",
@@ -142,8 +137,7 @@ export function PricingPage() {
               )}
               <div
                 id={tier.name ? tier.name.toLowerCase().replace(/\s+/g, '-') : 'package'}
-                className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${index === 2 ? 'md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ' : ''
-                  }${tier.popular
+                className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${tier.popular
                     ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]'
                     : 'bg-[#111] border-brand-500/20'
                   }`}

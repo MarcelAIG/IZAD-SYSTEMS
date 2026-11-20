@@ -15,30 +15,24 @@ interface CrmTier {
 
 const crmTiers: CrmTier[] = [
   {
-    name: "Marketing System",
+    name: "Reputation System",
     price: "97",
     priceSuffix: "/month",
     features: [
-      "Automated lead follow-up",
-      "5-Star review funnel",
-      "Auto Call Text Back"
+      "5-Star Review Funnel",
+      "Automated Review Request"
     ]
   },
-  /* Advanced tier temporarily removed:
   {
-    name: "Professional Package",
-    price: "149",
+    name: "Marketing System",
+    price: "197",
     priceSuffix: "/month",
-    popular: true,
     features: [
-      "Everything in Starter",
-      "Automatic review requests",
-      "Missed Call Text Back",
-      "Dedicated service pages",
-      "Google Business Profile updates"
+      "Reputation System",
+      "Auto Call Text Back",
+      "Automated Lead Follow-Up"
     ]
   },
-  */
   {
     name: "Functional Website",
     price: "500",
@@ -95,7 +89,7 @@ export function Pricing() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 2 ? 'md:col-span-2 md:w-1/2 md:mx-auto ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
+                  className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
