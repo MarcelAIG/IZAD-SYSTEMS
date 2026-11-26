@@ -1,4 +1,4 @@
-import { Globe, MessageSquare, Star, Zap } from 'lucide-react';
+import { Globe, Mic, Star } from 'lucide-react';
 
 export function AboutPage() {
   return (
@@ -13,39 +13,39 @@ export function AboutPage() {
           
           <div className="space-y-6">
             <p className="text-2xl text-white font-semibold leading-snug">
-              We’re a team that builds websites and customer follow-up systems for local service businesses.
+              We build high-converting websites, 24/7 AI voice agents, and reputation systems for local service businesses.
             </p>
             <p className="text-lg text-slate-400 leading-relaxed font-medium">
-              We make it easy for customers to see what you do, request service, and get a quick response. Our work brings together professional website design, instant lead replies, missed-call texts, and review requests.
+              We make it easy for customers to find your business online, get an immediate human-like answer every time they call, and see your strongest 5-star reviews.
             </p>
             <p className="text-lg text-slate-400 leading-relaxed font-medium">
-              We start by learning how your business works. Then we build the system around your needs and show you how to use it. Our goal is to help you look professional, respond faster, and win more jobs.
+              We start by learning how your business operates. Then we custom-build everything around your needs and walk you through it step by step. Our goal is to help you look professional, never miss a call, and win more jobs.
             </p>
           </div>
         </div>
 
         {/* Services Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           
           {/* Card 1 */}
           <div className="bg-[#0a0a0a] border border-white/5 p-8 rounded-2xl flex flex-col items-start hover:border-brand-500/30 transition-colors shadow-lg">
             <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-6">
               <Globe className="w-6 h-6 text-brand-500" />
             </div>
-            <h3 className="text-white text-lg font-bold mb-3">Website Design</h3>
+            <h3 className="text-white text-lg font-bold mb-3">Functional Website</h3>
             <p className="text-slate-400 text-sm font-medium leading-relaxed">
-              Professional, mobile-ready sites built to turn visitors into booked jobs.
+              Professional, mobile-ready websites built with SEO and social integrations to turn visitors into booked jobs.
             </p>
           </div>
 
           {/* Card 2 */}
           <div className="bg-[#0a0a0a] border border-white/5 p-8 rounded-2xl flex flex-col items-start hover:border-brand-500/30 transition-colors shadow-lg">
             <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-6">
-              <MessageSquare className="w-6 h-6 text-brand-500" />
+              <Mic className="w-6 h-6 text-brand-500" />
             </div>
-            <h3 className="text-white text-lg font-bold mb-3">Missed Call Text Back</h3>
+            <h3 className="text-white text-lg font-bold mb-3">AI Voice Agent</h3>
             <p className="text-slate-400 text-sm font-medium leading-relaxed">
-              Instantly text back callers when you can't pick up the phone.
+              24/7 AI voice receptionist that answers calls naturally, qualifies leads, and books appointments automatically.
             </p>
           </div>
 
@@ -54,20 +54,9 @@ export function AboutPage() {
             <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-6">
               <Star className="w-6 h-6 text-brand-500" />
             </div>
-            <h3 className="text-white text-lg font-bold mb-3">5-Star Review Funnel</h3>
+            <h3 className="text-white text-lg font-bold mb-3">Reputation System</h3>
             <p className="text-slate-400 text-sm font-medium leading-relaxed">
-              Automatically ask happy customers for reviews to boost your ranking.
-            </p>
-          </div>
-
-          {/* Card 4 */}
-          <div className="bg-[#0a0a0a] border border-white/5 p-8 rounded-2xl flex flex-col items-start hover:border-brand-500/30 transition-colors shadow-lg">
-            <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-6">
-              <Zap className="w-6 h-6 text-brand-500" />
-            </div>
-            <h3 className="text-white text-lg font-bold mb-3">Automated Follow-Up</h3>
-            <p className="text-slate-400 text-sm font-medium leading-relaxed">
-              Engage new leads instantly so they never go to a competitor.
+              5-star review funnel and automated review requests to boost your Google ranking and local trust.
             </p>
           </div>
 
@@ -80,7 +69,7 @@ export function AboutPage() {
               Want more calls and booked jobs?
             </h2>
             <p className="text-lg text-slate-400 font-medium leading-relaxed">
-              Let’s look at your business and show you how a better website, stronger reviews, and faster follow-up can help you win more customers.
+              Let’s look at your business and show you how a high-converting website, a 24/7 AI voice agent, and stronger 5-star reviews can help you win more customers.
             </p>
           </div>
           <div className="flex-shrink-0 w-full lg:w-auto">

@@ -24,16 +24,6 @@ const crmTiers: CrmTier[] = [
     ]
   },
   {
-    name: "Marketing System",
-    price: "197",
-    priceSuffix: "/month",
-    features: [
-      "Reputation System",
-      "Auto Call Text Back",
-      "Automated Lead Follow-Up"
-    ]
-  },
-  {
     name: "Functional Website",
     price: "500",
     priceSuffix: " / One-Time",
@@ -63,23 +53,22 @@ const crmTiers: CrmTier[] = [
 export function Pricing() {
   return (
     <section id="pricing" className="py-32 relative z-10 border-t border-slate-200 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-16 max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-slate-900 mb-6 font-display">
             Here is <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600">What It Costs</span>
           </h2>
           <p className="text-slate-600 text-lg font-medium">
-            No hidden fees. No bullshit. Just powerful systems that pay for themselves by closing the gaps in your revenue.
+            No hidden fees. Simple, transparent pricing built to help your business capture every customer.
           </p>
         </div>
 
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-slate-900 mb-10 text-center font-display">Monthly Software & Hosting</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {crmTiers.map((tier, index) => (
               <Fragment key={index}>
-                {index === 2 && (
+                {index === 1 && (
                   <div className="col-span-1 md:col-span-2 text-center mt-12 mb-2">
                     <h3 className="text-3xl md:text-4xl font-extrabold tracking-tighter text-slate-900 mb-4 font-display">Other Services</h3>
                   </div>
@@ -89,7 +78,7 @@ export function Pricing() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
-                  className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
+                  className={`relative bg-white border ${tier.popular ? 'border-brand-500/50 shadow-lg shadow-brand-500/10' : 'border-slate-200 shadow-sm'} ${index === 0 ? 'md:col-span-2 md:w-1/2 md:mx-auto ' : ''}p-8 rounded-2xl flex flex-col group hover:border-brand-300 transition-colors duration-500 w-full h-full`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-brand-500 to-brand-600 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center shadow-md shadow-brand-500/30 whitespace-nowrap">
@@ -106,7 +95,7 @@ export function Pricing() {
                       </span>
                     )}
                   </div>
-                  <div className="mb-8 flex items-baseline">
+                  <div className="mb-8 flex flex-wrap items-baseline gap-1">
                     <span className={`${tier.price?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-slate-900 tracking-tighter`}>€{tier.price}</span>
                     <span className="text-slate-500 font-bold text-lg ml-1 whitespace-pre-wrap">{tier.priceSuffix || "/month"}</span>
                   </div>

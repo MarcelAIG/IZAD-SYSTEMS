@@ -1,20 +1,18 @@
-import { motion } from 'motion/react';
-
 const steps = [
   {
     num: "1",
     title: "Quick Demo",
-    desc: "We learn about your business and show you exactly how the system would work for you."
+    desc: "We learn about your business and show you how a website, AI voice agent, and review system would work for you."
   },
   {
     num: "2",
     title: "We Build It",
-    desc: "Send us your business information and we handle the website, setup and automations."
+    desc: "Send us your business details and we handle your website, AI voice training, and reputation setup."
   },
   {
     num: "3",
     title: "Go Live",
-    desc: "We connect everything, walk you through it and launch your system."
+    desc: "We connect everything, walk you through how it works, and launch."
   }
 ];
 
@@ -22,9 +20,7 @@ export function HomeHowItWorks() {
   return (
     <section className="py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div 
-          className="text-center mb-16"
-        >
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white font-display tracking-tight">
             Getting Started Is Simple
           </h2>

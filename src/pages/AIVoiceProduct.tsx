@@ -1,26 +1,21 @@
-import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
-import { Send, UserPlus, Clock, MessageCircle } from 'lucide-react';
-import { BrandCheck } from '../components/BrandCheck';
 import { CTA } from '../components/CTA';
 import { Process } from '../components/Process';
 
-export function MissedCallProductPage() {
+export function AIVoiceProductPage() {
   const stats = [
     {
+      value: "62%",
+      label: "of calls to local service businesses go unanswered while you're on the job."
+    },
+    {
       value: "85%",
-      label: "of customers appreciate getting a text back after missing a call."
+      label: "of callers whose calls go unanswered won't call back—they call a competitor."
     },
     {
-      value: "72%",
-      label: "more customers respond to texts instead of voicemails."
-    },
-    {
-      value: "69%",
-      label: "of businesses gain more customers with missed call text back."
+      value: "24/7",
+      label: "automated call answering, lead qualification, and appointment booking."
     }
   ];
-
 
   return (
     <div className="pt-32 pb-12 min-h-screen flex flex-col">
@@ -28,7 +23,7 @@ export function MissedCallProductPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-32 text-center">
         <div className="flex flex-col items-center mb-16">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight max-w-4xl mx-auto">
-            Missed Call Text Back
+            AI Voice Agent
           </h1>
         </div>
 
@@ -54,10 +49,10 @@ export function MissedCallProductPage() {
           {/* Right Column: Image */}
           <div className="lg:col-span-2 flex flex-col h-full">
             <div className="w-full aspect-video bg-black/40 backdrop-blur-2xl rounded-2xl overflow-hidden relative border border-white/10 shadow-2xl flex-1 min-h-[300px] flex items-center justify-center p-4">
-              <img 
-                src="/missed-call-demo.png" 
-                alt="Missed Call Text Back Demo" 
-                className="w-full h-full object-contain rounded-lg" 
+              <img
+                src="/ai-voice-demo.png"
+                alt="AI Voice Agent Demo"
+                className="w-full h-full object-contain rounded-lg"
               />
             </div>
           </div>

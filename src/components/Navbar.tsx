@@ -1,4 +1,4 @@
-import { Menu, X, ChevronDown, Monitor, PhoneForwarded, Inbox, Smartphone, Search, Star, BarChart, ClipboardCheck } from 'lucide-react';
+import { Menu, X, ChevronDown, Monitor, Mic, Star } from 'lucide-react';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -10,10 +10,9 @@ export function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   const productItems = [
-    { title: "Functional Website", desc: "Get a lead-generating Website in just days", icon: Monitor, href: "/products/website" },
-    { title: "Missed Call Text Back", desc: "Automatically text back missed calls", icon: PhoneForwarded, href: "/products/missed-call" },
-    { title: "5-Star Magic Review Funnel", desc: "Get more 5 star reviews and prevent bad ones", icon: Star, href: "/products/reviews" },
-    { title: "Automated Lead Follow Up", desc: "Automatically follow up with leads via text", icon: ClipboardCheck, href: "/products/follow-up" },
+    { title: "Functional Website", desc: "Get a lead-generating website in just days", icon: Monitor, href: "/products/website" },
+    { title: "AI Voice Agent", desc: "24/7 AI receptionist that answers calls & books jobs", icon: Mic, href: "/products/ai-voice" },
+    { title: "Reputation System", desc: "Get more 5-star reviews and protect your reputation", icon: Star, href: "/products/reviews" },
   ];
 
   const NavLink = ({ to, children }: { to: string, children: React.ReactNode }) => (
@@ -51,12 +50,11 @@ export function Navbar() {
                 </button>
                 
                 <div className="absolute top-full left-0 pt-6 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300">
-                  <div className="bg-[var(--color-bg-light)] rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] p-4 w-[700px] border border-white/10">
+                  <div className="bg-[var(--color-bg-light)] rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] p-4 w-[400px] border border-white/10">
                     <div className="px-3 pb-3 mb-2 border-b border-white/10 text-sm font-bold text-white tracking-wide">
-                      Systems & Features
+                      Our Services
                     </div>
-                    <div className="grid grid-cols-2 gap-x-2 gap-y-1">
-                      
+                    <div className="grid grid-cols-1 gap-y-1">
                       {productItems.map((item, idx) => (
                         <Link key={idx} to={item.href} className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/5 transition-all group/item border border-transparent hover:border-white/5">
                           <div className="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center shrink-0 text-brand-400 group-hover/item:bg-brand-500/20 group-hover/item:scale-105 transition-all duration-300">
@@ -68,7 +66,6 @@ export function Navbar() {
                           </div>
                         </Link>
                       ))}
-
                     </div>
                   </div>
                 </div>
@@ -92,7 +89,7 @@ export function Navbar() {
               <button 
                 onClick={() => {
                   setIsOpen(!isOpen);
-                  if (isOpen) setIsProductsOpen(false); // reset products state on close
+                  if (isOpen) setIsProductsOpen(false);
                 }} 
                 className="text-slate-400 hover:text-white p-2"
               >

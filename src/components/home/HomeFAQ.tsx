@@ -5,19 +5,19 @@ import { Plus } from 'lucide-react';
 const faqs = [
   {
     question: "How long does setup take?",
-    answer: "Most systems can be prepared within roughly 7–14 days once we have everything we need from you."
+    answer: "Most websites, AI voice agents, and reputation systems are ready within 7–14 days once we have everything we need from you."
   },
   {
-    question: "Do I need a new website?",
-    answer: "Not necessarily. We'll look at what you already have and recommend the simplest option."
+    question: "Do I have to buy everything together?",
+    answer: "No. You can choose our one-time Functional Website, our 24/7 AI Voice Agent, or our Reputation System individually or together."
   },
   {
-    question: "Can I keep my current phone number?",
-    answer: "That depends on your setup, but in many cases we can integrate with your existing business process."
+    question: "Can the AI Voice Agent work with my current phone number?",
+    answer: "Yes. In most setups we can connect directly with your existing phone line—answering calls 24/7 or stepping in whenever you're busy."
   },
   {
-    question: "Do I have to understand automation?",
-    answer: "No. That's the point. We build the system and show you the few things you actually need to use."
+    question: "Do I have to manage complicated software?",
+    answer: "No. We custom-build and configure everything around your business and show you the few simple things you need."
   },
   {
     question: "Can I cancel?",

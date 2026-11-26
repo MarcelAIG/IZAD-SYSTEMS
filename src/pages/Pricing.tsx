@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Shield, Sparkles } from 'lucide-react';
 import { BrandCheck } from '../components/BrandCheck';
-import { Link } from 'react-router-dom';
 import { CTA } from '../components/CTA';
 
 export function PricingPage() {
@@ -37,24 +35,6 @@ export function PricingPage() {
       features: [
         "5-Star Review Funnel",
         "Automated Review Request"
-      ],
-      popular: false,
-      isOneTime: false,
-      isNew: false,
-      buttonStyles: "bg-brand-500 border-2 border-brand-500 text-white hover:bg-white hover:text-brand-500 hover:border-white transition-none",
-    },
-    {
-      name: "Marketing System",
-      monthlyPrice: "€197",
-      priceSuffix: "/mo",
-      annualPrice: "€1,773",
-      annualOriginal: "€2,364",
-      annualDiscounted: "€1,773",
-      annualSuffix: "/yr",
-      features: [
-        "Reputation System",
-        "Auto Call Text Back",
-        "Automated Lead Follow-Up"
       ],
       popular: false,
       isOneTime: false,
@@ -130,17 +110,20 @@ export function PricingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           {tiers.map((tier, index) => (
             <Fragment key={index}>
-              {index === 2 && (
+              {index === 1 && (
                 <div className="col-span-1 md:col-span-2 text-center mt-8 mb-2">
                   <h2 className="text-4xl md:text-5xl font-extrabold tracking-tighter text-white font-display mb-4">Other Services</h2>
                 </div>
               )}
               <div
                 id={tier.name ? tier.name.toLowerCase().replace(/\s+/g, '-') : 'package'}
-                className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${tier.popular
+                className={`relative flex flex-col p-6 lg:p-8 rounded-2xl border transition-none h-full scroll-mt-32 ${
+                  index === 0 ? 'md:col-span-2 w-full md:w-[calc(50%-1rem)] lg:w-[calc(50%-1.5rem)] md:mx-auto ' : ''
+                }${
+                  tier.popular
                     ? 'bg-[#111] border-brand-500 shadow-[0_0_30px_rgba(14,165,233,0.25)]'
                     : 'bg-[#111] border-brand-500/20'
-                  }`}
+                }`}
               >
                 {tier.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-500 text-white text-xs font-bold px-4 py-1 rounded-md uppercase tracking-widest shadow-[0_0_15px_rgba(14,165,233,0.4)]">
@@ -161,7 +144,7 @@ export function PricingPage() {
 
                 <div className="mb-8 min-h-[120px] flex flex-col justify-center">
                   {!isAnnual || tier.isOneTime ? (
-                    <div className="flex items-baseline gap-2">
+                    <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
                       <span className={`${tier.monthlyPrice?.length > 8 ? 'text-3xl sm:text-4xl' : 'text-5xl'} font-extrabold text-white tracking-tight`}>{tier.monthlyPrice}</span>
                       <span className="text-slate-400 font-bold text-lg whitespace-pre-wrap">{tier.priceSuffix || "/mo"}</span>
                     </div>

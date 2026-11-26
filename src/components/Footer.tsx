@@ -14,7 +14,7 @@ export function Footer() {
               <img src="/new-logo.png" alt="Izad Systems Logo" className="w-[180px] h-auto object-contain" />
             </Link>
             <p className="text-slate-400 text-base leading-relaxed font-medium mb-6 max-w-sm">
-              Websites and follow-up systems for local service businesses.
+              Websites, AI voice agents, and reputation systems for local service businesses.
             </p>
             
             <div className="space-y-3">
@@ -34,10 +34,9 @@ export function Footer() {
           <div className="lg:col-span-3">
             <h4 className="text-white font-bold mb-5 font-display tracking-wide text-lg">Services</h4>
             <ul className="space-y-3">
-              <li><Link to="/products/website" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">Website Design</Link></li>
-              <li><Link to="/products/missed-call" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">Missed Call Text Back</Link></li>
-              <li><Link to="/products/reviews" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">5-Star Review Funnel</Link></li>
-              <li><Link to="/products/follow-up" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">Automated Lead Follow-Up</Link></li>
+              <li><Link to="/products/website" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">Functional Website</Link></li>
+              <li><Link to="/products/ai-voice" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">AI Voice Agent</Link></li>
+              <li><Link to="/products/reviews" className="text-slate-400 text-sm font-medium hover:text-brand-500 transition-colors duration-200 block">Reputation System</Link></li>
             </ul>
           </div>
 

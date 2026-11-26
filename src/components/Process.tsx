@@ -1,21 +1,19 @@
-import { motion } from 'motion/react';
-
 export function Process() {
   const steps = [
     {
       number: "1",
       title: "Quick Call",
-      description: "Tell us about your business and what you want to improve. We’ll show you how the website and follow-up system would work for you and answer your questions."
+      description: "Tell us about your business and what you want to improve. We’ll show you how our website, AI voice agent, and reputation system would work for you."
     },
     {
       number: "2",
-      title: "We Build Your System",
-      description: "Send us your services, photos, and business details. We’ll build everything and give you a first version to review."
+      title: "We Build Everything",
+      description: "Send us your services, photos, and business details. We’ll custom-build your setup and share a first version to review."
     },
     {
       number: "3",
       title: "Launch & Walkthrough",
-      description: "We’ll test and launch your system together, then show you how to handle new leads, messages, and reviews."
+      description: "We’ll test and launch everything together, then walk you through managing your new leads, bookings, and reviews."
     }
   ];
 

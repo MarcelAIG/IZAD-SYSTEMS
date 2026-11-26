@@ -1,6 +1,3 @@
-
-import { motion } from 'motion/react';
-import { Star, ShieldCheck, BarChart, Eye } from 'lucide-react';
 import { CTA } from '../components/CTA';
 import { Process } from '../components/Process';
 
@@ -12,14 +9,13 @@ export function ReviewsProductPage() {
     },
     {
       value: "72%",
-      label: "of people use google reviews to find a business"
+      label: "of people use Google reviews to find a local business"
     },
     {
       value: "2.7x",
-      label: "more people buy a service from a business with a lot of reviews"
+      label: "more people choose a service business with strong 5-star reviews"
     }
   ];
-
 
   return (
     <div className="pt-32 pb-12 min-h-screen flex flex-col">
@@ -27,7 +23,7 @@ export function ReviewsProductPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full mb-32 text-center">
         <div className="flex flex-col items-center mb-16">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter text-white font-display mb-6 leading-tight max-w-4xl mx-auto">
-            5-Star Magic Review Funnel
+            Reputation System
           </h1>
         </div>
 
@@ -55,7 +51,7 @@ export function ReviewsProductPage() {
             <div className="w-full aspect-video bg-black/40 backdrop-blur-2xl rounded-2xl overflow-hidden relative border border-white/10 shadow-2xl flex-1 min-h-[300px] flex items-center justify-center p-4">
               <img
                 src="/reviews-demo.png"
-                alt="5-Star Magic Review Funnel Demo"
+                alt="Reputation & 5-Star Review Funnel Demo"
                 className="w-full h-full object-contain rounded-lg"
               />
             </div>

@@ -1,6 +1,3 @@
-import { motion } from 'motion/react';
-
-import { Link } from 'react-router-dom';
 import { TrustedBy } from './TrustedBy';
 
 export function Hero() {
@@ -18,10 +15,9 @@ export function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full h-full flex items-center">
 
-
         <div className="text-left max-w-4xl flex flex-col items-start mt-20 md:mt-8 relative z-10">
           <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] lg:text-[4.5rem] font-extrabold tracking-tighter text-white mb-6 leading-[1.05] font-display">
-            Website Design & Marketing Systems for <br className="hidden lg:block" />
+            Websites, AI Voice & Reputation for <br className="hidden lg:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-600 inline-block mt-2 lg:mt-0">
               Local Service Businesses
             </span>
@@ -29,7 +25,7 @@ export function Hero() {
           
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8 mb-3 md:mb-12 w-full max-w-5xl">
             <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium max-w-2xl">
-              Local Service Businesses Trust Us To Transform Their Business With Marketing Systems, Website Design, Reputation Management And Automation.
+              Local Service Businesses Trust Us To Grow Their Business With High-Converting Websites, 24/7 AI Voice Agents, And 5-Star Reputation Systems.
             </p>
             <a href="https://cal.com/marcel-izadpanah-fa6ual/demo-call" target="_blank" rel="noopener noreferrer" className="w-full md:w-auto shrink-0 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-black hover:to-black text-white px-10 py-5 rounded-md text-lg font-extrabold transition-all duration-300 flex items-center justify-center shadow-lg shadow-brand-500/30 border border-transparent hover:border-brand-500 hover:text-brand-500">
               Book A Call

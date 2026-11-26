@@ -1,7 +1,3 @@
-import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
-
 export function HomeCTA() {
   return (
     <section className="py-32 relative overflow-hidden">
@@ -22,7 +18,7 @@ export function HomeCTA() {
           </h2>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Make it easier for them to find you, contact you and hear back from you.
+            Make it easier for them to find your website, get an instant answer when they call, and trust your 5-star reputation.
           </p>
 
           <div className="flex flex-col items-center">
